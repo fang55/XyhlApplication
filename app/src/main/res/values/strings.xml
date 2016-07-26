@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">心悦护理师</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="back">返回</string>
+    <string name="btn_ok">确定</string>
+    <string name="btn_reset">重置密码</string>
+    <string name="btn_cancle">取消</string>
+    <string name="btn_next">下一步</string>
+    <string name="btn_save">保存</string>
+    <string name="text_defaddr">设为默认地址</string>
+    <string name="text_upateaddr">切换地址</string>
+    <string name="text_edit">编辑</string>
+    <string name="text_delect">删除</string>
+    <string name="text_name">姓名</string>
+    <string name="text_addr">地址</string>
+    <string name="text_addseraddr">添加服务地址</string>
+    <string name="tv_sermoney">服务价格：</string>
+    <string name="btn_sureorder">确定预约</string>
+    <!-- 登录 -->
+    <string name="et_phone">手机号码</string>
+    <string name="et_writephone">请输入手机号码</string>
+    <string name="et_writeverify">请输入验证码</string>
+    <string name="et_verify">验证</string>
+    <string name="et_password">密码</string>
+    <string name="et_newpsd">新密码</string>
+    <string name="et_resetpsd">确认新密码</string>
+    <string name="btn_login">登录</string>
+    <string name="tv_register">注册</string>
+    <string name="tv_forget">忘记密码</string>
+    <string name="tv_wenxin">微信登录</string>
+    <string name="tv_microblog">微博登录</string>
+    <string name="tv_qq">QQ登录</string>
+    <string name="et_authcode">验证码</string>
+    <string name="btn_get">获取</string>
+    <string name="btn_register">立即注册</string>
+    <string name="tv_agree">已有账号？直接登录</string>
+    <string name="tv_deal">用户协议</string>
+    <string name="tv_remark">备注信息：</string>
+    <string name="tv_rule">请输入6-32位字符，需字母、数字、符号两种以上组合，区分大小写。</string>
+    <!-- 首页 -->
+    <string name="et_home">请输入您的疑问</string>
+    <!-- 护理师选择 -->
+    <string name="select_health">健康护理师</string>
+    <string name="tv_order_teacher">预约护理师</string>
+    <string name="select_tv_servier">选择服务套餐</string>
+    <string name="select_btn_stairone">一级</string>
+    <string name="select_btn_stairtwo">二级</string>
+    <string name="select_btn_stairthree">三级</string>
+    <string name="select_tv_diff">选择不适类型</string>
+    <string name="select_tv_selpeople">服务人员</string>
+    <string name="select_tv_sermode">服务模式</string>
+    <string name="select_cb_monther">妈妈</string>
+    <string name="select_cb_body">宝宝</string>
+    <string name="select_btn_find">快速查找</string>
+    <string name="select_servier_time">服务时间：</string>
+    <string name="select_servier_address">选择服务时地址</string>
+    <string name="nurse_btn_order">立即预约</string>
+    <string name="nurse_btn_communication">前去沟通</string>
+    <string name="select_get_time">请选择上门时间</string>
+    <string name="nurser_level_content">母婴健康检测、分析、评估、家居环境、评估、建议、心理健康、评估、咨询、营养检测、评估、调理、疾病预防、保健、运动疗法、康复保健、起居健康、睡眠管理、亚健康指导、管理</string>
+    <string name="order_tv_bodynum">宝宝数量：</string>
+    <string name="order_tv_setmeal">服务名称：</string>
+    <string name="order_tv_mode">服务模式：</string>
+    <!-- 我的 -->
+    <string name="my_tv_order">我的订单</string>
+    <string name="my_tv_integral">我的积分</string>
+    <string name="my_tv_location">服务地址</string>
+    <string name="my_tv_collect">我的收藏</string>
+    <string name="my_tv_set">设置&#160;&#160;&#160;&#160;&#160;&#160;</string>
+    <string name="order_tv_all">全部订单</string>
+    <string name="order_tv_wait">待支付</string>
+    <string name="order_tv_not">未完成</string>
+    <string name="order_tv_service">待服务</string>
+    <string name="order_tv_lodeser">服务中</string>
+    <string name="order_tv_finish">已完成</string>
+    <string name="order_tv_refund">退款/售后</string>
+    <string name="my_tv_protocol">服务协议</string>
+    <string name="tv_versions">当前版本：</string>
+    <string name="btn_versions">立即更新</string>
+    <string name="tv_relation">联系电话：</string>
+    <string name="tv_dnf">官网地址：</string>
+    <string name="tv_dnfwechat">官方微信：</string>
+    <string name="about_tv_content">Copyright ©2016丑丑头条版权所有深圳市心悦云端技术有限公司</string>
+    <!-- 设置 -->
+    <string name="set_tv_data">个人资料</string>
+    <string name="set_tv_update">修改密码</string>
+    <string name="set_tv_idea">意见反馈</string>
+    <string name="set_tv_about">关于我们</string>
+    <string name="set_tv_check">检查版本</string>
+    <string name="set_tv_protocol">服务协议</string>
+    <string name="set_btn_back">退出登录</string>
+
+   <!-- 确定预约-->
+    <string name="confirm_tv_teather">护理师预约：</string>
+    <string name="confirm_tv_money">服务费用：</string>
+    <string name="confirm_tv_states">选择支付方式</string>
+    <string name="confirm_tv_wechat">微信支付</string>
+    <string name="confirm_tv_alipay">支付宝支付</string>
+    <!--评论-->
+   <string name="comm_et_content">说说这位护理师给你留下的印象吧～</string>
+    <string name="iv_addimg">添加照片</string>
+    <string name="comm_tv_skill">专业技能与服务态度</string>
+    <string name="comm_btn">提交评论</string>
+
+    <string name="error_style_empty">style不能为空</string>
+    <string name="error_alias_empty">alias不能为空</string>
+    <string name="error_tag_empty">tag不能为空</string>
+    <string name="error_tag_gs_empty">格式不对</string>
+    <string name="error_network">网络连接异常,初始化失败 请检查网络！</string>
+    <string name="logining">程序在后台执行, 请查看日志！</string>
+    <string name="setting_su">设置成功</string>
+    <string name="tag_hint">Tag为大小写字母，数字，下划线,中文， 多个用以逗号分隔</string>
+    <string name="alias_hint">Alias为大小写字母，数字，下划线</string>
+    <string name="style_hint">style为数字</string>
+</resources>

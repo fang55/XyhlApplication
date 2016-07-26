@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_bg"
+    android:paddingTop="@dimen/w100"
+    android:paddingBottom="@dimen/h100"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/login_bg"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/w370"
+        android:layout_marginRight="@dimen/w370"
+        android:orientation="vertical">
+        <include layout="@layout/include_login" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/h30"
+            android:paddingLeft="@dimen/h30"
+            android:paddingTop="@dimen/h22"
+            android:paddingBottom="@dimen/h22"
+            android:background="@color/white"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/et_phone"
+                style="@style/login_et_text"
+                android:drawableLeft="@drawable/phone"
+                android:hint="@string/et_phone"
+                android:inputType="number" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/h24"
+                android:layout_marginTop="@dimen/h22"
+                android:background="@color/et_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingRight="@dimen/h30"
+                android:orientation="horizontal" >
+                <EditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/et_getcode"
+                    style="@style/login_et_text"
+                    android:layout_alignParentLeft="true"
+                    android:drawableLeft="@drawable/code"
+                    android:hint="@string/et_authcode"
+                    android:inputType="number" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal">
+                   <TextView
+                       android:id="@+id/tv_cdtimer"
+                       android:layout_width="@dimen/w130"
+                       android:layout_height="@dimen/h50"
+                       android:background="@drawable/shape_border"
+                       android:textSize="@dimen/tv_twenty_eight"
+                       android:gravity="center"
+                       android:visibility="gone"
+                       />
+                    <Button
+                        android:id="@+id/btn_get"
+                        android:layout_width="@dimen/w130"
+                        android:layout_height="@dimen/h50"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/btn_get_shape"
+                        android:gravity="center"
+                        android:text="@string/btn_get"
+                        android:textSize="@dimen/tv_twenty_eight"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/tv_login" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/h24"
+                android:layout_marginTop="@dimen/h22"
+                android:background="@color/et_line" />
+            <EditText
+                android:id="@+id/et_password"
+                style="@style/login_et_text"
+                android:drawableLeft="@drawable/password"
+                android:inputType="textPassword"
+                android:hint="@string/et_password" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_register"
+            style="@style/btn_select"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/w60"
+            android:text="@string/btn_register"
+             />
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/h30"
+        android:orientation="vertical" >
+        <TextView
+            android:id="@+id/tv_if"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_agree"
+            android:textColor="@color/tv_login"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/et_text" />
+
+        <TextView
+            android:id="@+id/tv_explain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="说明：注册/登录代表您已同意"
+            android:textColor="@color/order_state"
+            android:layout_below="@id/tv_if"
+            android:layout_marginTop="30dp"
+            android:textSize="@dimen/tv_twenty" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="《心悦护理师用户协议》"
+            android:textColor="@color/tv_login"
+            android:layout_below="@id/tv_if"
+            android:layout_toRightOf="@id/tv_explain"
+            android:layout_marginTop="30dp"
+            android:textSize="@dimen/tv_twenty" />
+    </RelativeLayout>
+
+</RelativeLayout>

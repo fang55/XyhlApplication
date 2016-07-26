@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="1180dp"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingTop="30dp"
+    android:paddingBottom="60dp"
+    android:orientation="vertical" >
+    
+    <include 
+        android:id="@+id/inclue"
+        layout="@layout/include_login"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+           <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="30dp"
+            android:paddingBottom="40dp"
+            android:background="@color/white"
+            >
+
+            <include
+                layout="@layout/view_addr"></include>
+
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="40dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/tv_twenty_eight"
+            android:textColor="@color/black"
+            android:text="@string/confirm_tv_teather"/>
+        <TextView
+            android:id="@+id/tv_order_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/tv_twenty_eight"
+            android:textColor="@color/line"
+            android:layout_toRightOf="@id/tv_order"
+            android:layout_marginLeft="20dp"
+            />
+
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/tv_order"
+            android:layout_marginTop="30dp"
+            android:background="@color/line">
+        </View>
+
+        <TextView
+            android:id="@+id/tv_sermoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/tv_twenty_eight"
+            android:layout_below="@id/view_line"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/black"
+            android:text="@string/confirm_tv_money"
+            />
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/tv_twenty_eight"
+            android:textColor="@color/order_red"
+            android:layout_toRightOf="@id/tv_sermoney"
+            android:layout_below="@id/view_line"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:text="¥"/>
+        <TextView
+            android:id="@+id/tv_order_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/tv_twenty_eight"
+            android:textColor="@color/order_red"
+            android:layout_toRightOf="@id/tv"
+            android:layout_below="@id/view_line"
+            android:layout_marginTop="30dp"
+            />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/tv_text"
+        android:textColor="@color/order_state"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/confirm_tv_states"
+       />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+       android:paddingLeft="30dp"
+        android:paddingTop="17dp"
+        android:paddingBottom="17dp"
+        android:background="@color/white"
+        >
+        <ImageView 
+            android:id="@+id/iv1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/friend"/>
+        <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/tv_text"
+        android:layout_marginLeft="30dp"
+        android:layout_toRightOf="@id/iv1"
+         android:text="@string/confirm_tv_wechat"
+            android:textColor="@color/black"
+        />
+        <CheckBox
+            android:id="@+id/cb_weixin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="40dp"
+            android:button="@drawable/btn_radio"
+            ></CheckBox>
+
+        <View
+            android:id="@+id/view_line2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line"
+            android:layout_below="@id/iv1"
+            android:layout_marginTop="17dp"
+            />
+
+        <ImageView
+            android:id="@+id/iv2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/view_line2"
+            android:layout_marginTop="17dp"
+            android:background="@drawable/def_pay"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/tv_text"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="17dp"
+            android:layout_toRightOf="@id/iv2"
+            android:layout_below="@id/view_line2"
+            android:textColor="@color/black"
+            android:text="@string/confirm_tv_alipay"/>
+        <CheckBox
+            android:id="@+id/rb_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/view_line2"
+            android:button="@drawable/btn_radio"
+            android:layout_marginTop="17dp"
+            android:layout_marginRight="40dp"
+            ></CheckBox>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="80dp"
+        style="@style/btn_sunmit"
+        android:text="支确支付"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

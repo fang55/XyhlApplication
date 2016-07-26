@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/set_dialog_bg"
+    android:orientation="vertical">
+   <include
+       android:id="@+id/inclue"
+       layout="@layout/include_login"></include>
+  <ImageView
+      android:id="@+id/iv_logo"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="60dp"
+      android:layout_gravity="center"
+      android:layout_below="@id/inclue"
+      android:layout_centerHorizontal="true"
+      android:background="@drawable/logo"/>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/et_text"
+        android:layout_marginTop="12dp"
+        android:layout_gravity="center"
+        android:text="@string/app_name"
+        android:layout_below="@id/iv_logo"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/tv_login"/>
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/tv_twenty_eight"
+        android:textColor="@color/line"
+        android:layout_below="@id/tv_name"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/tv_versions"/>
+
+    <TextView
+        android:id="@+id/tv_versions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/tv_twenty_eight"
+        android:layout_below="@id/tv_name"
+        android:textColor="@color/login_top"
+        android:layout_toRightOf="@id/tv1"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:text="Ver 1.0.1"/>
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/tv_twenty_eight"
+        android:textColor="@color/line"
+        android:layout_below="@id/tv1"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/tv_relation"/>
+
+    <TextView
+        android:id="@+id/tv_relation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/tv_twenty_eight"
+        android:layout_below="@id/tv1"
+        android:textColor="@color/login_top"
+        android:layout_toRightOf="@id/tv2"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:text="0755-21517516"/>
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/tv_twenty_eight"
+        android:textColor="@color/line"
+        android:layout_below="@id/tv2"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/tv_dnf"/>
+
+    <TextView
+        android:id="@+id/tv_dnf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/tv_twenty_eight"
+        android:layout_below="@id/tv2"
+        android:textColor="@color/login_top"
+        android:layout_toRightOf="@id/tv3"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:text="www.szxyyd.com"/>
+
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/tv_twenty_eight"
+        android:textColor="@color/line"
+        android:layout_below="@id/tv3"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/tv_dnfwechat"/>
+    <TextView
+        android:id="@+id/tv_dnfwechat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/tv_twenty_eight"
+        android:layout_below="@id/tv3"
+        android:textColor="@color/login_top"
+        android:layout_toRightOf="@id/tv4"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:text="szxyyd"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/tv_twenty_two"
+        android:textColor="@color/order_state"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/about_tv_content"/>
+</RelativeLayout>

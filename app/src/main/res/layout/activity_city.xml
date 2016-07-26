@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <include 
+        layout="@layout/include_login"
+        />
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="40dp"
+      android:orientation="horizontal"
+      android:gravity="center"
+      >
+      <ImageView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:background="@drawable/iv_location"/>
+      <TextView 
+          android:id="@+id/tv"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textSize="@dimen/tv_text"
+          android:layout_marginLeft="10dp"
+          android:textColor="@color/login_top"
+          android:text="当前定位城市："/>
+      <TextView
+          android:id="@+id/btn_city"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textSize="@dimen/tv_text"
+          android:textColor="@color/login_top"
+          android:text="深圳"
+          />
+  </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/tv_twenty_eight"
+        android:textColor="@color/order_state"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:text="已开通城市"/>
+  <ListView 
+      android:id="@+id/lv_city"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_marginTop="15dp"
+      android:listSelector="#00000000"
+      >
+      
+  </ListView>
+</LinearLayout>

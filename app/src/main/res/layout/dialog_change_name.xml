@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/set_dialog_bg"
+    android:orientation="vertical" >
+    
+    <include 
+        layout="@layout/dialog_prople_top"/>
+    
+<RelativeLayout 
+         android:layout_width="match_parent"
+         android:layout_height="100dp"
+         android:paddingLeft="30dp"
+         android:layout_marginTop="40dp"
+         android:background="@drawable/shape_border">
+         <EditText
+             android:id="@+id/et_updname"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:hint="总有刁民想害朕"
+             android:textSize="30sp"
+             android:layout_centerVertical="true"
+             android:background="@null"/>
+         <Button
+             android:id="@+id/btn_cleak"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:background="@drawable/iv_delect"
+             android:layout_alignParentRight="true"
+              android:layout_centerVertical="true"
+              android:layout_marginRight="30dp"
+             />
+     </RelativeLayout>
+</LinearLayout>

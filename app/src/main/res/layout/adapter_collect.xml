@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:padding="@dimen/w20">
+
+    <com.szxyyd.xyhl.view.RoundImageView
+        android:id="@+id/iv_teach"
+        android:layout_width="@dimen/w195"
+        android:layout_height="@dimen/h232"
+        app:borderRadius="12dp"
+        app:type="round"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rl_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/w30"
+        android:layout_toRightOf="@id/iv_teach" >
+
+        <TextView
+            android:id="@+id/tv_nurse_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/w10"
+            android:textColor="#333333"
+            android:textSize="@dimen/w30" />
+
+        <TextView
+            android:id="@+id/tv_healthteacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/w10"
+            android:layout_toRightOf="@id/tv_nurse_name"
+            android:textSize="@dimen/w28" />
+          <ImageView 
+              android:id="@+id/iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_nurse_name"
+                android:layout_marginTop="@dimen/w20"
+                android:background="@drawable/list_star"/>
+
+        <TextView
+            android:id="@+id/tv_nurse_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_nurse_name"
+            android:layout_marginLeft="@dimen/w20"
+            android:layout_marginTop="@dimen/h20"
+            android:textColor="#666666"
+            android:layout_toRightOf="@id/iv"
+            android:textSize="@dimen/w30" />
+
+        <TextView
+            android:id="@+id/tv_experience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv"
+            android:layout_marginLeft="@dimen/w10"
+            android:layout_marginTop="@dimen/h10"
+            android:textColor="#666666"
+            android:textSize="@dimen/w28" />
+
+        <TextView
+            android:id="@+id/tv_nurse_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv"
+            android:layout_marginLeft="@dimen/w40"
+            android:layout_marginTop="@dimen/h10"
+            android:layout_toRightOf="@id/tv_experience"
+            android:textColor="#666666"
+            android:textSize="@dimen/w28" />
+
+        <TextView
+            android:id="@+id/tv_technology"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_experience"
+            android:layout_marginLeft="@dimen/w10"
+            android:layout_marginTop="@dimen/h20"
+            android:textColor="#666666"
+            android:textSize="@dimen/w26" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view"
+        style="@style/view_line"
+        android:layout_below="@id/iv_teach"
+        android:layout_marginTop="@dimen/h20"
+        />
+
+    <ImageView
+        android:id="@+id/tv_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view"
+        android:layout_marginTop="@dimen/h20"
+        android:background="@drawable/iv_location" />
+
+    <TextView
+        android:id="@+id/tv_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view"
+        android:layout_marginLeft="@dimen/w10"
+        android:layout_toRightOf="@id/tv_location"
+        android:layout_marginTop="@dimen/h20"
+        android:textColor="#666666"
+        android:textSize="@dimen/w26" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/view"
+        android:layout_marginTop="@dimen/h20"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_canclecollect"
+            android:layout_width="@dimen/w164"
+            android:layout_height="@dimen/h62"
+            android:background="@drawable/btn_get_shape"
+            android:text="取消收藏"
+            android:textColor="@color/tv_login"
+            android:gravity="center"
+            android:textSize="@dimen/w28" />
+
+        <Button
+            android:id="@+id/btn_go"
+            android:layout_width="@dimen/w164"
+            android:layout_height="@dimen/h62"
+            android:layout_marginLeft="@dimen/w30"
+            android:background="@drawable/btn_blue_bg"
+            android:text="立即预约"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="@dimen/w28" />
+    </LinearLayout>
+
+</RelativeLayout>

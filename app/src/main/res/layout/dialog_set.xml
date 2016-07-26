@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/set_dialog_bg"
+    android:orientation="vertical"
+    >
+    <include layout="@layout/include_login" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_data"
+                style="@style/set_rl"
+                android:layout_marginTop="@dimen/h20">
+
+                <TextView
+                    android:id="@+id/tv_set_data"
+                    style="@style/set_text"
+                    android:text="@string/set_tv_data" />
+
+                <ImageView
+                    style="@style/set_img_next" />
+            </RelativeLayout>
+
+            <View style="@style/view_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_update"
+                style="@style/set_rl">
+
+                <TextView
+                    android:id="@+id/tv_set_update"
+                    style="@style/set_text"
+                    android:text="@string/set_tv_update" />
+
+                <ImageView style="@style/set_img_next" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_idea"
+                style="@style/set_rl"
+                android:layout_marginTop="30dp">
+
+                <TextView
+                    android:id="@+id/tv_set_idea"
+                    style="@style/set_text"
+                    android:text="@string/set_tv_idea" />
+
+                <ImageView style="@style/set_img_next" />
+            </RelativeLayout>
+
+            <View style="@style/view_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_about"
+                style="@style/set_rl">
+
+                <TextView
+                    android:id="@+id/tv_set_about"
+                    style="@style/set_text"
+                    android:text="@string/set_tv_about" />
+
+                <ImageView style="@style/set_img_next" />
+            </RelativeLayout>
+
+            <View style="@style/view_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_check"
+                style="@style/set_rl">
+
+                <TextView
+                    android:id="@+id/tv_set_check"
+                    style="@style/set_text"
+                    android:text="@string/set_tv_check" />
+
+                <ImageView style="@style/set_img_next" />
+            </RelativeLayout>
+
+            <View style="@style/view_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_protocol"
+                style="@style/set_rl">
+
+                <TextView
+                    android:id="@+id/tv_set_protocol"
+                    style="@style/set_text"
+                    android:text="@string/set_tv_protocol" />
+
+                <ImageView style="@style/set_img_next" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="@dimen/w900"
+                android:layout_height="@dimen/h76"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/h30"
+                android:background="@drawable/btn_blue_bg"
+                android:text="@string/set_btn_back"
+                android:textColor="@color/white"
+                android:textSize="@dimen/tv_text" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

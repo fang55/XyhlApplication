@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="540dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:background="@drawable/cancle_bg">
+        <TextView
+            android:id="@+id/tv_dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/tv_thirty_four"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/black"
+            android:text="确定删除收藏？"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/cancle_or"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_dialog_cancle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="26dp"
+                android:gravity="center"
+                android:textColor="@color/tv_login"
+                android:text="取消"/>
+            <TextView
+                android:id="@+id/tv_dialog_sure"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/tv_login"
+                android:textSize="26dp"
+                android:gravity="center"
+                android:text="确定"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>

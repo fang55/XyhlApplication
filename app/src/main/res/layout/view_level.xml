@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="20dp"
+    android:layout_marginLeft="-20dp"
+    >
+    <Button
+        android:id="@+id/btn_level1"
+        android:layout_width="@dimen/w190"
+        android:layout_height="@dimen/h60"
+        android:textSize="@dimen/tv_twenty_five"
+        android:layout_gravity="center"
+        android:background="@drawable/border_gray"
+        />
+  <!--  <Button
+        android:id="@+id/btn_level2"
+        android:layout_width="@dimen/w190"
+        android:layout_height="@dimen/h60"
+        android:textSize="@dimen/tv_twenty_five"
+        android:textColor="@color/login_top"
+        android:layout_gravity="center"
+        android:background="@drawable/shape_level_border"
+        android:layout_marginLeft="15dp"
+        />
+    <Button
+        android:id="@+id/btn_level3"
+        android:layout_width="@dimen/w190"
+        android:layout_height="@dimen/h60"
+        android:textSize="@dimen/tv_twenty_five"
+        android:textColor="@color/login_top"
+        android:layout_gravity="center"
+        android:background="@drawable/shape_level_border"
+        android:layout_marginLeft="15dp"
+        />-->
+  <!--  <LinearLayout
+        android:id="@+id/ll_serll"
+        android:layout_width="190dp"
+        android:layout_height="60dp"
+        android:background="@drawable/shape_level_border"
+        android:layout_marginLeft="15dp"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/tv_level_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/tv_twenty_five"
+            android:textColor="@color/login_top"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+-->
+</LinearLayout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="1180dp"
+    android:layout_height="729dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="30dp">
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="1180dp"
+        android:layout_height="90dp">
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/top_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:text="@string/text_addseraddr"
+            android:textColor="@color/black"
+            android:textSize="@dimen/tv_top_size" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="30dp">
+
+        <ImageView
+            android:id="@+id/iv_people"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/iv_people" />
+
+        <EditText
+            android:id="@+id/et_addr_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/iv_people"
+            android:background="@null"
+            android:hint="@string/text_name"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:id="@+id/iv_haoma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_people"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/iv_haoma" />
+
+        <EditText
+            android:id="@+id/et_addr_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_people"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_toRightOf="@id/iv_haoma"
+            android:background="@null"
+            android:hint="@string/et_phone"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:id="@+id/iv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_haoma"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/iv_location" />
+
+        <EditText
+            android:id="@+id/et_addr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_haoma"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_toRightOf="@id/iv_location"
+            android:background="@null"
+            android:hint="@string/text_addr"
+            android:textSize="30sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:orientation="horizontal"
+       >
+
+            <CheckBox
+                android:id="@+id/rb_addr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/btn_radio"
+                />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="@string/text_defaddr"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="400dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/btn_blue_bg"
+        android:text="@string/btn_save"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+</LinearLayout>

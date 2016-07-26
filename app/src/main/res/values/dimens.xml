@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="tv_top_size">@dimen/w34</dimen>
+    <dimen name="tv_twenty">@dimen/w20</dimen>
+    <dimen name="tv_twenty_two">@dimen/w22</dimen>
+    <dimen name="tv_twenty_four">@dimen/w24</dimen>
+    <dimen name="tv_twenty_five">@dimen/w25</dimen>
+    <dimen name="et_text">@dimen/w26</dimen>
+    <dimen name="tv_twenty_eight">@dimen/w28</dimen>
+    <dimen name="tv_text">@dimen/w30</dimen>
+    <dimen name="tv_thirty_two">@dimen/w32</dimen>
+    <dimen name="tv_thirty_four">@dimen/w34</dimen>
+</resources>

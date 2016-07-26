@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+     >
+    <include 
+        android:id="@+id/inclue"
+        layout="@layout/include_top"/>
+     
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/inclue"
+        android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="@dimen/w470"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        >
+        <com.szxyyd.xyhl.view.RoundImageView
+            android:id="@+id/iv_people"
+            android:layout_width="@dimen/w148"
+            android:layout_height="@dimen/h176"
+            android:layout_marginTop="@dimen/h67"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            />
+        <TextView 
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/h24"
+            android:textSize="@dimen/w30"
+            android:layout_below="@id/iv_people"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            />
+        <include
+            layout="@layout/my_item"
+            />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_order_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/w30"
+        >
+    </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

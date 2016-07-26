@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="1180dp"
+    android:layout_height="728dp"
+    android:orientation="vertical"
+    android:paddingBottom="50dp"
+    android:background="@color/white"
+    >
+
+    <include
+        android:id="@+id/inclue"
+        layout="@layout/include_login"></include>
+
+    <LinearLayout
+        android:id="@+id/ll_week"
+        android:layout_width="1180dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/et_line"
+        android:layout_below="@id/inclue"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:id="@+id/ll_date1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+           >
+            <TextView
+                android:id="@+id/tv_date1"
+                style="@style/select_time"
+                android:text="今天5/30"
+                />
+            <TextView
+                android:id="@+id/tv_state1"
+                style="@style/select_timestates"
+                android:text="已约满"
+                 />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_date2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <TextView
+                android:id="@+id/tv_date2"
+                style="@style/select_time"
+                android:text="明天5/31"
+                 />
+            <TextView
+                android:id="@+id/tv_state2"
+                style="@style/select_timestates"
+                android:text="可预约"
+                 />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_date3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_date3"
+                style="@style/select_time"
+                android:text="后天6/1"
+                />
+            <TextView
+                android:id="@+id/tv_state3"
+                style="@style/select_timestates"
+                android:text="可预约"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_date4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_date4"
+                style="@style/select_time"
+                android:text="周四6/2"
+                 />
+            <TextView
+                android:id="@+id/tv_state4"
+                style="@style/select_timestates"
+                android:text="可预约"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_date5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_date5"
+                style="@style/select_time"
+                android:text="周五6/3"
+                 />
+            <TextView
+                android:id="@+id/tv_state5"
+                style="@style/select_timestates"
+                android:text="可预约"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_date6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_date6"
+                style="@style/select_time"
+                android:text="周六6/4"
+                />
+            <TextView
+                android:id="@+id/tv_state6"
+                style="@style/select_timestates"
+                android:text="可预约"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_date7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_date7"
+                style="@style/select_time"
+                android:text="周日6/5"
+                />
+            <TextView
+                android:id="@+id/tv_state7"
+                style="@style/select_timestates"
+                android:text="可预约"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_select_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginLeft="40dp"
+        android:layout_below="@id/ll_week"
+        android:orientation="horizontal">
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_ok"
+        style="@style/btn_select"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/btn_ok" />
+</RelativeLayout>

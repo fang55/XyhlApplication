@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:id="@+id/tv_chat_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/tv_login"
+        android:textSize="@dimen/tv_text"
+        android:layout_marginLeft="30dp"
+        android:text="官方消息"/>
+    <View 
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/tv_chat_name"
+        android:background="@color/line"/>
+    
+     <!-- 聊天内容 listview -->  
+    <ListView  
+        android:id="@+id/lv_chat"  
+        android:layout_width="fill_parent"  
+        android:layout_height="wrap_content"  
+        android:layout_below="@id/line"  
+        android:cacheColorHint="#0000"  
+        android:divider="@null"  
+        android:dividerHeight="5dp"  
+        android:scrollbarStyle="outsideOverlay"  
+        android:stackFromBottom="true" />  
+        
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:padding="20dp"
+        >
+        <Button 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/more"/>
+        <TextView 
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_get_shape"/>
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/tv_login"
+            android:layout_gravity="center"
+            android:textSize="@dimen/tv_text"
+            android:layout_marginLeft="20dp"
+            android:text="发送"/>
+    </LinearLayout>
+</RelativeLayout>

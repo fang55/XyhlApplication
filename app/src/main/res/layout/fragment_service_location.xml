@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/h20"
+    android:orientation="vertical" >
+    
+   <GridView
+       android:id="@+id/listview"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginBottom="@dimen/h60"
+       android:verticalSpacing="20dp"
+       android:numColumns="1"
+       android:listSelector="@android:color/transparent"
+       >
+
+   </GridView>
+   
+   <Button
+       android:id="@+id/btn_add"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/h82"
+       android:text="添加服务地址"
+       android:textSize="@dimen/w30"
+       android:textColor="@color/tv_login"
+       android:layout_alignParentBottom="true"
+       android:background="@drawable/home_write_bg"/>
+</RelativeLayout>

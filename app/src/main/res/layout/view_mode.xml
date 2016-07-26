@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <Button
+        android:id="@+id/btn_mode1"
+        android:layout_width="190dp"
+        android:layout_height="60dp"
+        android:textSize="@dimen/tv_twenty_five"
+        android:textColor="@color/login_top"
+        android:layout_gravity="center"
+        android:background="@drawable/shape_level_border"
+        android:text="28天"
+        />
+    <Button
+        android:id="@+id/btn_mode2"
+        android:layout_width="190dp"
+        android:layout_height="60dp"
+        android:textSize="@dimen/tv_twenty_five"
+        android:textColor="@color/login_top"
+        android:layout_gravity="center"
+        android:background="@drawable/shape_level_border"
+        android:layout_marginLeft="15dp"
+        android:text="按次服务"
+        />
+
+</LinearLayout>

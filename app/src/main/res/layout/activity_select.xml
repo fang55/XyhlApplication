@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+     >
+    <include
+        android:id="@+id/include"
+        layout="@layout/include_top" />
+   <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+         android:layout_below="@id/include"
+       android:background="@color/white"
+        android:orientation="horizontal">
+    <!--左边内容  -->
+    <include
+        layout="@layout/viewpager_item">
+    </include>
+       <View
+           android:layout_width="1dp"
+           android:layout_height="match_parent"
+           android:layout_marginRight="@dimen/w30"
+           android:background="@color/view_line"></View>
+       <!--右边内容  -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="90dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/select_tv_servier"
+                    android:textColor="@color/login_top"
+                    android:layout_marginTop="@dimen/h20"
+                    android:textSize="@dimen/tv_twenty_eight" />
+
+                <!--星级-->
+                <LinearLayout
+                    android:id="@+id/ll_level"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/h20"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+                </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/h20"
+                        android:textSize="@dimen/tv_twenty_four"
+                        android:textColor="@color/line"
+                        />
+                    <GridLayout
+                        android:id="@+id/gl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:columnCount="1"
+                        android:layout_marginTop="@dimen/h20"
+                        android:orientation="horizontal" >
+                    </GridLayout>
+                    <View
+                        android:layout_marginTop="@dimen/h20"
+                        style="@style/view_line" />
+                    <!--个性化要求-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="个性化要求"
+                        android:layout_marginTop="@dimen/h20"
+                        android:textColor="@color/login_top"
+                        android:textSize="@dimen/tv_text" />
+
+                    <GridLayout
+                        android:id="@+id/gl_people"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/h20"
+                        android:columnCount="2"
+                        android:orientation="horizontal" >
+                    </GridLayout>
+
+                    <View
+                        style="@style/view_line"
+                        android:layout_marginTop="@dimen/h20"
+                         />
+
+                <include
+                    layout="@layout/view_addr"></include>
+
+                <View
+                    android:layout_marginTop="@dimen/h20"
+                    style="@style/view_line" />
+
+                <include
+                    layout="@layout/view_time"></include>
+
+                </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/h90"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true">
+        <View
+            style="@style/view_line" />
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/w30"
+            android:textSize="@dimen/tv_twenty_eight"
+            android:layout_centerVertical="true"
+            android:text="@string/tv_sermoney"/>
+
+        <TextView
+            android:id="@+id/tv_pri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/tv_thirty_four"
+            android:textColor="@color/order_red"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/tv"
+            android:text="¥"/>
+
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/tv_thirty_four"
+            android:textColor="@color/order_red"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/tv_pri"
+            android:text="0.00"/>
+
+        <Button
+            android:id="@+id/btn_next"
+            style="@style/order_btn"
+            android:text="@string/select_btn_find"
+            />
+    </RelativeLayout>
+</RelativeLayout>

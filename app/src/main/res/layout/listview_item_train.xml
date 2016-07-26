@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+     <TextView 
+        android:id="@+id/tv_train_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/et_text"
+         android:textColor="@color/login_top"
+        />
+     <TextView
+        android:id="@+id/tv_train_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:textColor="@color/login_top"
+         android:layout_marginTop="10dp"
+         android:textSize="@dimen/et_text"
+        />
+     <View
+         android:layout_width="wrap_content"
+         android:layout_height="1dp"
+         android:background="@color/tv_login"
+         android:layout_marginTop="30dp"
+         android:layout_marginBottom="30dp"></View>
+</LinearLayout>

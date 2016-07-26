@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <include
+        android:id="@+id/inclue"
+        layout="@layout/include_top"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/inclue"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="470dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="21dp"
+
+            >
+            <ImageView
+                android:id="@+id/iv_people"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/body"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                />
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="李芸芸"
+                android:layout_marginTop="21dp"
+                android:textSize="30sp"
+                android:layout_below="@id/iv_people"
+                android:layout_centerHorizontal="true"
+                />
+            <include
+                layout="@layout/my_item"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_order_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dp"
+            >
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

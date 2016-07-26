@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/ll_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/h100"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv_order1"
+            style="@style/set_order_tv"
+            android:layout_weight="1"
+            android:text="全部订单"/>
+        <TextView
+            android:id="@+id/tv_order2"
+            style="@style/set_order_tv"
+            android:layout_weight="1"
+            android:text="待响应"/>
+
+        <TextView
+            android:id="@+id/tv_order3"
+            style="@style/set_order_tv"
+            android:layout_weight="1"
+            android:text="待支付"/>
+
+        <TextView
+            android:id="@+id/tv_order4"
+            style="@style/set_order_tv"
+            android:layout_weight="1"
+            android:text="待服务"/>
+        <TextView
+            android:id="@+id/tv_order5"
+            style="@style/set_order_tv"
+            android:layout_weight="1"
+            android:text="服务中"/>
+        <TextView
+            android:id="@+id/tv_order6"
+            style="@style/set_order_tv"
+            android:layout_weight="1"
+            android:text="待评价"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_line"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_below="@id/ll_title"
+        android:scaleType="matrix"
+        android:layout_weight="1"
+        android:background="@drawable/title_line"/>
+
+    <GridView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/h30"
+        android:verticalSpacing="20dp"
+        android:horizontalSpacing="20dp"
+        android:layout_below="@id/iv_line"
+        android:numColumns="1"
+        android:listSelector="@android:color/transparent"
+        ></GridView>
+</RelativeLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:padding="30dp"
+        android:background="@drawable/shape_password">
+
+        <EditText
+            android:id="@+id/et_newpsd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:drawablePadding="26dp"
+            android:hint="******"
+            android:inputType="textPassword"
+            android:textSize="@dimen/tv_text" />
+
+        <Button
+            android:id="@+id/btn_del"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/iv_delect"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:padding="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shape_password">
+
+        <EditText
+            android:id="@+id/et_resetpsd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:hint="@string/et_resetpsd"
+            android:inputType="textPassword"
+            android:textSize="@dimen/tv_text" />
+
+    </RelativeLayout>
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="0dp"
+          android:layout_weight="1"
+          android:layout_marginTop="20dp"
+          android:textSize="@dimen/et_text"
+          android:textColor="@color/order_state"
+          android:text="@string/tv_rule"
+          />
+   
+    <Button 
+         android:id="@+id/btn_ok"
+        style="@style/btn_select"
+        android:layout_marginTop="100dp"
+         android:layout_gravity="center"
+         android:text="@string/btn_ok"
+         />
+
+</LinearLayout>
