@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/w30"
+        >
+        <Button
+            android:id="@+id/btn_set_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@mipmap/def_back"/>
+        <TextView
+            android:id="@+id/tv_set_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/thirty"
+            android:textColor="@color/color_black"
+            android:layout_centerHorizontal="true"
+            />
+        <TextView
+            android:id="@+id/btn_set_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/thirty"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/color_black"
+            android:text="提交"
+            />
+    </RelativeLayout>
+</LinearLayout>

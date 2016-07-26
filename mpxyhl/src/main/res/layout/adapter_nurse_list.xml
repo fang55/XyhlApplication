@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_white"
+    android:orientation="horizontal"
+    android:padding="@dimen/w20"
+    >
+
+    <com.szxyyd.mpxyhl.view.RoundImageView
+        android:id="@+id/iv_teach"
+        android:layout_width="@dimen/w150"
+        android:layout_height="@dimen/h170"
+        app:borderRadius="12dp"
+        app:type="round"
+         />
+    <RelativeLayout
+        android:id="@+id/rl_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/w20"
+        android:layout_toRightOf="@id/iv_teach" >
+
+        <TextView
+            android:id="@+id/tv_nurse_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/h30"
+            android:textColor="#333333"
+            android:textSize="@dimen/w30" />
+
+        <TextView
+            android:id="@+id/tv_healthteacher"
+            style="@style/gv_text_six"
+            android:layout_marginLeft="@dimen/h30"
+            android:layout_toRightOf="@id/tv_nurse_name"
+              />
+
+        <LinearLayout
+            android:id="@+id/ll_srvscore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_nurse_name"
+            android:layout_marginTop="@dimen/h20"
+            android:layout_marginLeft="@dimen/h30"
+            android:orientation="horizontal">
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_experience"
+            style="@style/gv_text_four"
+            android:layout_below="@id/ll_srvscore"
+            android:layout_marginLeft="@dimen/h30"
+            android:layout_marginTop="@dimen/h20"
+             />
+         <View
+             android:id="@+id/view1"
+             android:layout_width="@dimen/w2"
+             android:layout_height="@dimen/h20"
+             android:layout_marginLeft="@dimen/w20"
+             android:layout_marginTop="@dimen/h20"
+             android:layout_toRightOf="@id/tv_experience"
+             android:layout_below="@id/ll_srvscore"
+             android:background="@color/color_view_line"></View>
+        <TextView
+            android:id="@+id/tv_nurse_age"
+            style="@style/gv_text_four"
+            android:layout_below="@id/ll_srvscore"
+            android:layout_marginLeft="@dimen/w20"
+            android:layout_marginTop="@dimen/h20"
+            android:layout_toRightOf="@id/view1"
+
+             />
+        <View
+            android:id="@+id/view2"
+            android:layout_width="@dimen/w2"
+            android:layout_height="@dimen/h20"
+            android:layout_marginLeft="@dimen/w20"
+            android:layout_marginTop="@dimen/h20"
+            android:layout_toRightOf="@id/tv_nurse_age"
+            android:layout_below="@id/ll_srvscore"
+            android:background="@color/color_view_line"></View>
+        <TextView
+            android:id="@+id/tv_nurse_distance"
+            style="@style/gv_text_four"
+            android:layout_below="@id/ll_srvscore"
+            android:layout_marginLeft="@dimen/h20"
+            android:layout_marginTop="@dimen/h20"
+            android:layout_toRightOf="@id/view2"
+             />
+        <TextView
+            android:id="@+id/tv_technology"
+            style="@style/gv_text_two"
+            android:layout_below="@id/tv_experience"
+            android:layout_marginLeft="@dimen/h30"
+            android:layout_marginTop="@dimen/h20"
+            android:ellipsize="end"
+            android:singleLine="true"
+             />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/btn_ordernurse"
+        android:layout_width="@dimen/w97"
+        android:layout_height="@dimen/h97"
+        android:text="预约"
+        android:textColor="@color/color_bule"
+        android:gravity="center"
+        android:layout_alignParentRight="true"
+        android:background="@mipmap/def_circle"
+        android:layout_marginLeft="@dimen/w20"
+        app:type="circle"
+        android:textSize="@dimen/w28" />
+
+</RelativeLayout>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/h90">
+        <LinearLayout
+            android:id="@+id/ll_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/w30"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="@dimen/w21"
+                android:layout_height="@dimen/h27"
+                android:background="@mipmap/def_location"/>
+            <TextView
+                android:id="@+id/tv_city"
+                style="@style/tv_text_bule"
+                android:layout_marginLeft="10dp"
+                android:text="深圳"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/w10"
+            android:textSize="@dimen/thirty_four"
+            android:textColor="@color/color_six_three"
+            android:layout_centerInParent="true"
+            android:text="心悦护理"
+            />
+        <Button
+            android:id="@+id/btn_feedback"
+            android:layout_width="@dimen/w100"
+            android:layout_height="@dimen/h50"
+            android:textColor="@color/color_bule"
+            android:textSize="@dimen/thirty"
+            android:background="@drawable/shape_blue"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/w30"
+            android:text="反馈"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/h100"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_home"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_home"
+                android:layout_width="@dimen/w44"
+                android:layout_height="@dimen/h44"
+                />
+
+            <TextView
+                android:id="@+id/tv_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/tab_menu_item"
+                android:text="@string/tv_home"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_order"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_order"
+                android:layout_width="@dimen/w44"
+                android:layout_height="@dimen/h44"
+                />
+
+            <TextView
+                android:id="@+id/tv_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/tab_menu_item"
+                android:text="社区"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_message"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_message"
+                android:layout_width="@dimen/w44"
+                android:layout_height="@dimen/h44"
+                />
+
+            <TextView
+                android:id="@+id/tv_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/tab_menu_item"
+                android:text="会员专属"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_my"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_my"
+                android:layout_width="@dimen/w44"
+                android:layout_height="@dimen/h44"
+                />
+
+            <TextView
+                android:id="@+id/tv_my"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/tab_menu_item"
+                android:text="@string/tv_my"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+   <!-- <RadioGroup
+        android:id="@+id/rg_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/h100"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_home"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/tab_home"
+            android:text="@string/tv_home" />
+
+        <RadioButton
+            android:id="@+id/rb_community"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/tab_community"
+            android:text="@string/tv_community" />
+
+        <RadioButton
+            android:id="@+id/rb_message"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/tab_message"
+            android:text="@string/tv_message" />
+
+        <RadioButton
+            android:id="@+id/rb_my"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/tab_my"
+            android:text="@string/tv_my" />
+
+    </RadioGroup>-->
+<android.support.v4.view.ViewPager
+    android:id="@+id/viewpager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@id/tab_bar"
+    android:layout_below="@id/rl_top"
+    android:orientation="horizontal"></android.support.v4.view.ViewPager>
+</RelativeLayout>

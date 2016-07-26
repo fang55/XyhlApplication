@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/h90"
+        android:background="@color/color_white"
+        >
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/w30"
+            android:textSize="@dimen/twenty_eight"
+            android:layout_centerVertical="true"
+            android:text="@string/tv_sermoney"/>
+
+        <TextView
+            android:id="@+id/tv_pri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/thirty_four"
+            android:textColor="@color/color_red"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/tv"
+            android:text="¥"/>
+
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/thirty_four"
+            android:textColor="@color/color_red"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/tv_pri"
+            android:text="0.00"/>
+
+        <Button
+            android:id="@+id/btn_next"
+            style="@style/btn_sure"
+            android:text="@string/select_btn_find"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

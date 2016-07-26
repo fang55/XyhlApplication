@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/h90"
+        android:paddingLeft="@dimen/w30"
+        >
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/w26"
+            android:layout_height="@dimen/h26"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/def_return"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_six_three"
+            android:textSize="@dimen/thirty_four"
+            android:layout_centerInParent="true"
+            android:text="切换城市"/>
+    </RelativeLayout>
+   <View
+       style="@style/view_line"></View>
+
+    <TextView
+        android:id="@+id/tv_current"
+        style="@style/text_sixthree"
+        android:layout_marginTop="@dimen/h30"
+        android:layout_marginLeft="@dimen/w30"
+        android:text="当前城市：深圳"/>
+    <View
+        android:layout_marginTop="@dimen/h30"
+        style="@style/view_line"></View>
+
+    <ListView
+        android:id="@+id/lv_city"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/h30">
+
+    </ListView>
+</LinearLayout>

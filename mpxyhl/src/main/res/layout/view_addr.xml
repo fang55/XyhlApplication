@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/rl_location"
+    >
+    <LinearLayout
+        android:id="@+id/ll_notaddr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="@dimen/w24"
+            android:layout_height="@dimen/h31"
+            android:background="@mipmap/iv_location"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/w20"
+            android:text="您还没有添加服务地址，"
+            android:textColor="@color/color_six_three"
+            android:textSize="@dimen/thirty"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/w20"
+            android:text="点击添加"
+            android:textColor="@color/color_six_three"
+            android:textSize="@dimen/thirty"/>
+
+    </LinearLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/rl_addr">
+    <ImageView
+        android:id="@+id/iv_people"
+        android:layout_width="@dimen/w27"
+        android:layout_height="@dimen/h30"
+        android:background="@mipmap/iv_people"/>
+
+    <TextView
+        android:id="@+id/tv_addr_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_six_three"
+        android:textSize="@dimen/thirty"
+        android:layout_toRightOf="@id/iv_people"
+        android:layout_marginLeft="@dimen/w20"
+        android:text="姓名"/>
+
+    <ImageView
+        android:id="@+id/iv_haoma"
+        android:layout_width="@dimen/w24"
+        android:layout_height="@dimen/h31"
+        android:layout_marginLeft="@dimen/w130"
+        android:layout_toRightOf="@id/tv_addr_name"
+        android:background="@mipmap/iv_haoma"/>
+
+    <TextView
+        android:id="@+id/tv_addr_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_six_three"
+        android:textSize="@dimen/thirty"
+        android:layout_toRightOf="@id/iv_haoma"
+        android:layout_marginLeft="@dimen/w20"
+        android:text="@string/et_mobile"/>
+
+    <ImageView
+        android:id="@+id/iv_location"
+        android:layout_width="@dimen/w24"
+        android:layout_height="@dimen/h31"
+        android:layout_marginTop="@dimen/h20"
+        android:layout_below="@id/iv_people"
+        android:background="@mipmap/iv_location"/>
+
+    <TextView
+        android:id="@+id/tv_addr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/twenty_six"
+        android:layout_marginLeft="@dimen/w20"
+        android:layout_marginTop="@dimen/h20"
+        android:layout_below="@id/iv_people"
+        android:layout_toRightOf="@id/iv_location"
+        android:textColor="@color/color_six_six"
+        android:text="地址"
+        />
+    <ImageView
+        android:id="@+id/iv_next"
+        android:layout_width="@dimen/w16"
+        android:layout_height="@dimen/h28"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:background="@mipmap/next"/>
+</RelativeLayout>
+</RelativeLayout>

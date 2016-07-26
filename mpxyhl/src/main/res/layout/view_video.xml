@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <WebView
+        android:id="@+id/wv_video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+       >
+    </WebView >
+            <Button
+                android:id="@+id/btn_start"
+                android:layout_width="@dimen/w80"
+                android:layout_height="@dimen/w80"
+                android:background="@mipmap/video_strat"
+                android:layout_centerInParent="true"
+                />
+</RelativeLayout>

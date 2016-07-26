@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <View
+       style="@style/view_line"></View>
+
+    <RadioGroup
+        android:id="@+id/rgChannel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/h100"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_white"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb1"
+            style="@style/tab_top_item"
+            android:background="@drawable/tab_selector"
+            android:text="全部" />
+
+        <RadioButton
+            android:id="@+id/rb2"
+            style="@style/tab_top_item"
+            android:background="@drawable/tab_selector"
+            android:text="待响应" />
+
+        <RadioButton
+            android:id="@+id/rb3"
+            style="@style/tab_top_item"
+            android:background="@drawable/tab_selector"
+            android:text="待支付" />
+
+        <RadioButton
+            android:id="@+id/rb4"
+            style="@style/tab_top_item"
+            android:background="@drawable/tab_selector"
+            android:text="待服务" />
+        <RadioButton
+            android:id="@+id/rb5"
+            style="@style/tab_top_item"
+            android:background="@drawable/tab_selector"
+            android:text="服务中" />
+        <RadioButton
+            android:id="@+id/rb6"
+            style="@style/tab_top_item"
+            android:background="@drawable/tab_selector"
+            android:text="待评价" />
+
+    </RadioGroup>
+    <LinearLayout
+        android:id="@+id/ll_notorder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/def_ordernot"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/w26"
+            android:textColor="@color/color_six_six"
+            android:text="您还没有相关的订单"/>
+    </LinearLayout>
+    <GridView
+        android:id="@+id/gv_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/h10"
+        android:verticalSpacing="20dp"
+        android:numColumns="1"
+        android:listSelector="@android:color/transparent"
+        ></GridView>
+</LinearLayout>

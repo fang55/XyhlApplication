@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/w30"
+        android:background="@drawable/shape_password">
+
+        <EditText
+            android:id="@+id/et_newpsd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:hint="******"
+            android:inputType="textPassword"
+            android:textColor="@color/color_six_a"
+            android:textSize="@dimen/thirty" />
+
+        <Button
+            android:id="@+id/btn_del"
+            android:layout_width="@dimen/w44"
+            android:layout_height="@dimen/h44"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/iv_delect"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/w30"
+        android:layout_marginTop="@dimen/h30"
+        android:background="@drawable/shape_password">
+
+        <EditText
+            android:id="@+id/et_resetpsd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:hint="@string/et_resetpsd"
+            android:inputType="textPassword"
+            android:textColor="@color/color_six_a"
+            android:textSize="@dimen/thirty" />
+
+    </RelativeLayout>
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="0dp"
+          android:layout_weight="1"
+          android:layout_marginTop="20dp"
+          android:textSize="@dimen/twenty_six"
+          android:textColor="@color/color_six_a"
+          android:text="@string/tv_rule"
+          />
+   
+    <Button 
+         android:id="@+id/btn_ok"
+        style="@style/login_btn"
+        android:layout_marginTop="@dimen/h50"
+         android:layout_gravity="center"
+         android:text="@string/btn_sure"
+         />
+</LinearLayout>

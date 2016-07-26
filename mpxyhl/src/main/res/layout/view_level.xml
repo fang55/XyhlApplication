@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/w20"
+    android:paddingTop="@dimen/h10"
+    >
+  <Button
+      android:id="@+id/btn_level1"
+      android:layout_width="@dimen/w156"
+      android:layout_height="@dimen/h60"
+      android:textSize="@dimen/twenty_six"
+      android:textColor="@color/color_six_three"
+      android:gravity="center"
+      android:button="@null"
+      android:background="@drawable/shape_gray"
+      >
+
+  </Button>
+
+</LinearLayout>

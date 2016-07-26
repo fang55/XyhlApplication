@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/set_ll"
+        android:layout_marginTop="@dimen/h20"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_sixthree"
+            android:layout_gravity="center"
+            android:text="@string/text_original_psd"/>
+        <EditText
+            android:id="@+id/et_original"
+            style="@style/text_sixnine"
+            android:layout_marginLeft="@dimen/w30"
+            android:background="@null"
+            android:layout_gravity="center"
+            android:hint="@string/input_original_psd"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/set_ll"
+        android:layout_marginTop="@dimen/h30"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_sixthree"
+            android:layout_gravity="center"
+            android:text="@string/text_new_psd"/>
+        <EditText
+            android:id="@+id/et_new"
+            style="@style/text_sixnine"
+            android:layout_marginLeft="@dimen/w30"
+            android:background="@null"
+            android:layout_gravity="center"
+            android:hint="@string/input_new_psd"
+            />
+    </LinearLayout>
+    <LinearLayout
+        style="@style/set_ll"
+        android:layout_marginTop="@dimen/h30"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_sixthree"
+            android:layout_gravity="center"
+            android:text="@string/text_new_psd"/>
+        <EditText
+            android:id="@+id/et_renew"
+            style="@style/text_sixnine"
+            android:layout_marginLeft="@dimen/w30"
+            android:background="@null"
+            android:layout_gravity="center"
+            android:hint="@string/input_sure_psd"
+            />
+    </LinearLayout>
+
+    <TextView
+        style="@style/gv_text_four"
+        android:text="@string/input_rule_one"
+        android:layout_marginLeft="@dimen/w30"
+        android:layout_marginTop="@dimen/h30"/>
+    <TextView
+        style="@style/gv_text_four"
+        android:text="@string/input_rule_two"
+        android:layout_marginLeft="@dimen/w30"
+        android:layout_marginTop="@dimen/h15"/>
+</LinearLayout>

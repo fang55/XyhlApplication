@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/et_mobile"
+            android:textColor="@color/color_six_three"
+            android:textSize="@dimen/thirty" />
+
+        <EditText
+            android:id="@+id/et_psdPhone"
+            style="@style/login_et_text"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/w100"
+            android:hint="@string/et_writephone"
+            android:inputType="number"
+            android:textColor="@color/color_six_a" />
+    </LinearLayout>
+
+    <View
+        style="@style/login_view_line" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/h30"
+        android:paddingRight="@dimen/w30">
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/et_verifiy"
+            android:textColor="@color/color_six_three"
+            android:textSize="@dimen/thirty" />
+
+        <EditText
+            android:id="@+id/et_code"
+            style="@style/login_et_text"
+            android:layout_marginLeft="@dimen/w100"
+            android:hint="@string/et_writeverify"
+            android:layout_toRightOf="@id/tv" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="@dimen/w1"
+                android:layout_height="@dimen/h40"
+                android:background="@color/color_view_two"></View>
+
+            <TextView
+                android:id="@+id/tv_getverifiy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/w24"
+                android:text="@string/tv_getverifiy"
+                android:textColor="@color/color_bule"
+                android:textSize="@dimen/thirty" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View style="@style/login_view_line" />
+
+    <Button
+        android:id="@+id/btn_reset"
+        style="@style/login_btn"
+        android:layout_marginTop="@dimen/h50"
+        android:text="@string/btn_set" />
+
+</LinearLayout>

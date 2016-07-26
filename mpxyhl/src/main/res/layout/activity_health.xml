@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/top"
+        layout="@layout/include_login"></include>
+<ImageView
+    android:id="@+id/iv_top"
+    android:layout_width="@dimen/w720"
+    android:layout_height="@dimen/h300"
+    android:layout_below="@id/top"
+    android:src="@mipmap/health_top"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/iv_top"
+        android:layout_marginBottom="@dimen/h100"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/h20"
+            android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_white"
+            android:padding="@dimen/w20"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/select_tv_servier"
+                android:textColor="@color/color_six_three"
+                android:textSize="@dimen/twenty_eight" />
+            <!--星级-->
+            <GridLayout
+                android:id="@+id/ll_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                >
+           <!-- <RadioGroup
+                android:id="@+id/rg_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/h20"
+                android:orientation="horizontal">
+            </RadioGroup>-->
+            </GridLayout>
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/h20"
+                android:textSize="@dimen/twenty_six"
+                android:textColor="@color/color_six_a"
+                />
+            <GridLayout
+                android:id="@+id/gl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="1"
+                android:layout_marginTop="@dimen/h20"
+                android:orientation="horizontal" >
+            </GridLayout>
+
+          <View
+             style="@style/health_line"
+              android:layout_marginTop="@dimen/h20"></View>
+            <!--个性化要求-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="个性化要求"
+                android:layout_marginTop="@dimen/h20"
+                android:textColor="@color/color_six_three"
+                android:textSize="@dimen/twenty_eight" />
+            <GridLayout
+                android:id="@+id/gl_people"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/h20"
+                android:columnCount="2"
+                android:orientation="horizontal" >
+            </GridLayout>
+            <View
+                style="@style/health_line"
+                android:layout_marginTop="@dimen/h20"
+                />
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/h10"
+                android:background="@color/color_white"
+                android:padding="@dimen/w20"
+                android:orientation="vertical"
+                >
+                <include
+                    layout="@layout/view_addr"></include>
+            </LinearLayout>
+            <View
+                style="@style/health_line" />
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/h10"
+                  android:background="@color/color_white"
+                  android:padding="@dimen/w20"
+                  android:orientation="vertical">
+
+                  <RelativeLayout
+                      android:id="@+id/rl_time"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+                      <ImageView
+                          android:id="@+id/iv_time"
+                          android:layout_width="@dimen/w30"
+                          android:layout_height="@dimen/h28"
+                          android:background="@mipmap/def_time"/>
+
+                      <TextView
+                          android:id="@+id/tv_sertime"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="@dimen/twenty_eight"
+                          android:layout_marginLeft="@dimen/w20"
+                          android:layout_toRightOf="@id/iv_time"
+                          android:text="@string/select_servier_time"/>
+                      <TextView
+                          android:id="@+id/tv_date"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="@dimen/twenty_eight"
+                          android:layout_marginLeft="@dimen/w15"
+                          android:layout_toRightOf="@id/tv_sertime"
+                          android:textColor="@color/color_six_six"
+                          android:text="2016-5-13 09:00"/>
+                      <ImageView
+                          android:layout_width="@dimen/w16"
+                          android:layout_height="@dimen/h28"
+                          android:layout_alignParentRight="true"
+                          android:layout_centerVertical="true"
+                          android:background="@mipmap/next"/>
+                  </RelativeLayout>
+                  <View
+                      style="@style/health_line"
+                      android:layout_marginTop="@dimen/h20"
+                      />
+
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="@dimen/h20"
+                      android:orientation="horizontal">
+                      <ImageView
+                          android:layout_width="@dimen/w30"
+                          android:layout_height="@dimen/h30"
+                          android:background="@mipmap/def_remark"/>
+                      <TextView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="@dimen/twenty_eight"
+                          android:layout_marginLeft="@dimen/w20"
+                          android:layout_toRightOf="@id/iv_time"
+                          android:text="@string/tv_remark"/>
+                      <EditText
+                          android:id="@+id/et_remark"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="@dimen/twenty_eight"
+                          android:layout_marginLeft="@dimen/w15"
+                          android:layout_toRightOf="@id/tv_sertime"
+                          android:textColor="@color/color_six_six"
+                          android:background="@null"
+                          android:hint="早点到，我10点后要出门有事情！"/>
+                  </LinearLayout>
+              </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_white"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <include
+            layout="@layout/view_money"></include>
+    </LinearLayout>
+</RelativeLayout>

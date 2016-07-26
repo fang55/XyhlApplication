@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_top">
+
+    </include>
+
+    <View style="@style/view_line"></View>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/h430"
+        android:layout_marginTop="@dimen/h30"
+        android:paddingTop="@dimen/w30"
+        android:paddingLeft="@dimen/w30"
+        android:paddingRight="@dimen/w30">
+
+        <RelativeLayout
+            android:id="@+id/rl_teach"
+            android:layout_width="@dimen/w140"
+            android:layout_height="@dimen/h140"
+            android:background="@drawable/shape_iv_bg">
+
+            <ImageView
+                android:id="@+id/iv_teach"
+                android:layout_width="@dimen/w112"
+                android:layout_height="@dimen/h133"
+                android:layout_centerInParent="true"
+                 />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/h140"
+            android:layout_toRightOf="@id/rl_teach"
+            android:background="@drawable/shape_input">
+
+            <EditText
+                android:id="@+id/et_commcontent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/w15"
+                android:background="@null"
+                android:hint="@string/comm_et_content"
+                android:textColor="@color/color_six_a"
+                android:textSize="@dimen/thirty" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/h60"
+            android:layout_below="@id/rl_teach"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/h600"
+                android:background="@drawable/shape_iv_bg">
+            <!--    <ImageView
+                    android:layout_width="@dimen/w67"
+                    android:layout_height="@dimen/h57"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/def_addimg" />
+-->
+                <GridView
+                    android:id="@+id/noScrollgridview"
+                    android:layout_width="290dp"
+                    android:layout_height="@dimen/h600"
+                    android:layout_marginLeft="5dp"
+                    android:horizontalSpacing="3dp"
+                    android:numColumns="4"
+                    android:scrollbars="none"
+                    android:verticalSpacing="5dp" >
+                </GridView>
+            </RelativeLayout>
+
+           <!-- <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/w20"
+                android:layout_gravity="center"
+                android:text="@string/text_addimage"
+                android:textColor="@color/color_six_a"
+                android:textSize="@dimen/thirty" />-->
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/w30"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/tv_skill"
+            style="@style/text_sixthree"
+            android:text="@string/comm_tv_skill"
+            />
+        <RatingBar
+            android:id="@+id/rb_skill"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/h80"
+            android:layout_alignParentRight="true"
+            android:stepSize="1"
+            android:layout_marginTop="@dimen/h20"
+            style="@style/roomRatingBar"
+            />
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_comm_sunmit"
+        android:layout_width="@dimen/w600"
+        android:layout_height="@dimen/h80"
+        android:layout_marginTop="@dimen/h60"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_blue_bg"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/thirty_four"
+        android:text="@string/comm_btn"
+        />
+</LinearLayout>

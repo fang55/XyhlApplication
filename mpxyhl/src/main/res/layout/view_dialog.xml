@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    >
+<RelativeLayout
+    android:layout_width="@dimen/w520"
+    android:layout_height="@dimen/h240"
+    android:background="@mipmap/def_dialog">
+    <TextView
+        android:id="@+id/tv_dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/thirty_four"
+        android:textColor="#030303"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/h60"
+        android:text="是否删除订单？"
+        />
+    <RelativeLayout
+        android:layout_width="@dimen/w518"
+        android:layout_height="@dimen/h86"
+        android:layout_alignParentBottom="true"
+        android:background="@mipmap/def_diabottom"
+        android:orientation="vertical">
+
+     <TextView
+         android:id="@+id/tv_cancle"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:textSize="@dimen/thirty_two"
+         android:textColor="@color/color_bule"
+         android:layout_marginLeft="@dimen/w95"
+         android:layout_centerVertical="true"
+         android:text="取消"/>
+
+        <TextView
+            android:id="@+id/tv_sure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/thirty_two"
+            android:textColor="@color/color_bule"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/w95"
+            android:layout_centerVertical="true"
+            android:text="确定"/>
+    </RelativeLayout>
+</RelativeLayout>
+</LinearLayout>

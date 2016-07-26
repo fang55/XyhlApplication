@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/login_top"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/h145"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/w60"
+        android:paddingRight="@dimen/w60">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/w36"
+                android:layout_height="@dimen/h36"
+                android:background="@mipmap/def_mobile" />
+
+            <EditText
+                android:id="@+id/et_phone"
+                style="@style/login_et_text"
+                android:layout_marginLeft="@dimen/w30"
+                android:hint="@string/et_mobile"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <View style="@style/login_view_line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/h30">
+
+            <ImageView
+                android:id="@+id/iv_verifiy"
+                android:layout_width="@dimen/w36"
+                android:layout_height="@dimen/h36"
+                android:background="@mipmap/def_verifiy" />
+
+            <EditText
+                android:id="@+id/et_verifiy"
+                style="@style/login_et_text"
+                android:layout_marginLeft="@dimen/w30"
+                android:layout_toRightOf="@id/iv_verifiy"
+                android:hint="@string/et_verifiy"
+                android:inputType="textPassword" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="@dimen/w1"
+                    android:layout_height="@dimen/h40"
+                    android:background="@color/color_view_two"></View>
+
+                <TextView
+                    android:id="@+id/tv_getverifiy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/w24"
+                    android:text="@string/tv_getverifiy"
+                    android:textColor="@color/color_bule"
+                    android:textSize="@dimen/thirty" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <View style="@style/login_view_line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/h30"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/w36"
+                android:layout_height="@dimen/h36"
+                android:background="@mipmap/def_psw" />
+
+            <EditText
+                android:id="@+id/et_password"
+                style="@style/login_et_text"
+                android:layout_marginLeft="@dimen/w30"
+                android:hint="@string/et_password"
+                android:inputType="textPassword" />
+        </LinearLayout>
+
+        <View style="@style/login_view_line" />
+
+        <Button
+            android:id="@+id/btn_register"
+            style="@style/login_btn"
+            android:layout_marginTop="@dimen/h50"
+            android:text="@string/btn_register" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/w30"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/tv_text_gray"
+                android:text="@string/tv_have" />
+
+            <TextView
+                android:id="@+id/tv_login"
+                style="@style/tv_text_bule"
+                android:text="@string/tv_direct" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
