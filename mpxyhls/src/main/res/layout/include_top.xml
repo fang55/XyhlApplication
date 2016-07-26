@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/h90"
+    android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/w20"
+            android:layout_height="@dimen/h34"
+            android:layout_marginLeft="@dimen/w50"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/def_back"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/thirty_four"
+            android:layout_centerInParent="true"
+            android:textColor="@color/color_six_three"
+            android:text="登录"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/w30"
+            android:visibility="gone"
+            android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_location"
+                    android:layout_width="@dimen/w21"
+                    android:layout_height="@dimen/h27"
+                    android:background="@mipmap/def_location"/>
+                <TextView
+                    android:id="@+id/tv_city"
+                    style="@style/tv_text_bule"
+                    android:layout_marginLeft="10dp"
+                    android:text="深圳"
+                    />
+        </LinearLayout>
+        <Button
+            android:id="@+id/btn_set"
+            android:layout_width="@dimen/w124"
+            android:layout_height="@dimen/h42"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/w30"
+            android:background="@mipmap/def_set"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            />
+        <View
+            style="@style/view_line"
+            android:layout_alignParentBottom="true"></View>
+</RelativeLayout>

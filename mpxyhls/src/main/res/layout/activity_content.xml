@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/h90"
+      android:paddingLeft="@dimen/w30"
+      android:orientation="horizontal">
+
+      <LinearLayout
+          android:id="@+id/ll_back"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:gravity="center"
+          android:orientation="horizontal">
+          <ImageView
+              android:layout_width="@dimen/w20"
+              android:layout_height="@dimen/h34"
+              android:background="@mipmap/def_back"/>
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              style="@style/text_six_thirty"
+              android:text="返回"
+              />
+      </LinearLayout>
+      <TextView
+          android:id="@+id/tv_conTitle"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textSize="@dimen/thirty_four"
+          android:textColor="@color/color_six_three"
+          android:layout_centerInParent="true"
+          android:text="星座"
+          />
+  </RelativeLayout>
+    <ListView
+        android:id="@+id/lv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/h20"
+        android:background="@color/color_white"
+        android:listSelector="@color/color_transparency"></ListView>
+</LinearLayout>

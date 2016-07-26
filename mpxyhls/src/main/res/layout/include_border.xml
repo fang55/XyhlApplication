@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/w30"
+    android:paddingTop="@dimen/h30"
+    android:orientation="vertical" >
+
+        <CheckBox
+            android:id="@+id/cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/w28"
+            android:gravity="center"
+            android:button="@drawable/btn_radio"
+            android:drawablePadding="@dimen/w20"
+             />
+
+</LinearLayout>

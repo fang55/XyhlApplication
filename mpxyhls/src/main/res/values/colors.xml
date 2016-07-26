@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="color_transparency">#00000000</color>
+    <color name="color_white">#ffffff</color>
+    <color name="color_black">#000000</color>
+    <color name="color_red">#ff0000</color>
+    <color name="color_six_three">#333333</color>
+    <color name="color_six_six">#666666</color>
+    <color name="color_six_nine">#999999</color>
+    <color name="color_six_d">#dddddd</color>
+    <color name="color_six_a">#aaaaaa</color>
+    <color name="color_bule">#5dcbf4</color>
+    <color name="color_view_line">#979797</color>
+    <color name="color_view">#e0e0e0</color>
+    <color name="color_view_two">#cbcbcb</color>
+    <color name="color_view_three">#ededed</color>
+    <color name="order_tv">#262626</color>
+</resources>

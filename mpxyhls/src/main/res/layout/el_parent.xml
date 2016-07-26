@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="@dimen/w30"
+    android:background="@color/color_white"
+    android:layout_height="@dimen/h120">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:id="@+id/certificate"
+            android:layout_width="@dimen/w38"
+            android:layout_height="@dimen/h28"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/tc_info"/>
+
+        <TextView
+            android:id="@+id/tv_certificate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_bule"
+            android:textSize="@dimen/twenty_eight"
+            android:layout_toRightOf="@id/certificate"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:text="专业证书"
+            />
+     <ImageView
+         android:layout_width="@dimen/w30"
+         android:layout_height="@dimen/h16"
+         android:layout_alignParentRight="true"
+         android:layout_centerVertical="true"
+         android:background="@mipmap/def_bottom"/>
+    </RelativeLayout>
+</LinearLayout>

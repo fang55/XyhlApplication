@@ -1,0 +1,215 @@
+<resources>
+
+    <!--登录输入文本-->
+    <style name="login_et_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/thirty</item>
+        <item name="android:textColor">@color/color_six_nine</item>
+        <item name="android:drawablePadding">@dimen/w30</item>
+        <item name="android:background">@null</item>
+    </style>
+    <!--登录下划线-->
+    <style name="login_view_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/color_bule</item>
+        <item name="android:alpha">0.5</item>
+        <item name="android:layout_marginTop">@dimen/h30</item>
+    </style>
+    <style name="view_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/color_view_line</item>
+        <item name="android:alpha">0.5</item>
+        <item name="android:layout_marginTop">@dimen/h30</item>
+    </style>
+    <style name="login_btn">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/h80</item>
+        <item name="android:background">@drawable/btn_blue_bg</item>
+        <item name="android:textSize">@dimen/thirty_four</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <!--蓝色文本-->
+    <style name="tv_text_bule">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/thirty</item>
+        <item name="android:textColor">@color/color_bule</item>
+    </style>
+    <!--灰色文本-->
+    <style name="tv_text_gray">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/thirty</item>
+        <item name="android:textColor">@color/color_six_nine</item>
+    </style>
+    <style name="login_bottom_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/twenty_four</item>
+        <item name="android:textColor">@color/color_six_nine</item>
+        <item name="android:layout_marginTop">@dimen/h15</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <style name="tab_menu_item">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:textColor">@color/color_six_three</item>
+        <item name="android:textSize">@dimen/twenty_four</item>
+    </style>
+    <style name="tab_top_item">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:textColor">@color/color_six_six</item>
+        <item name="android:textSize">@dimen/twenty_four</item>
+    </style>
+    <!--字号24 字体颜色#333333-->
+    <style name="text_sixthree_four">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_six_three</item>
+        <item name="android:textSize">@dimen/twenty_four</item>
+    </style>
+    <!--字号26 字体颜色#333333-->
+    <style name="text_sixthree_six">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_six_three</item>
+        <item name="android:textSize">@dimen/twenty_six</item>
+    </style>
+    <!--字号28 字体颜色#333333-->
+    <style name="text_sixthree_eight">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_six_three</item>
+        <item name="android:textSize">@dimen/twenty_eight</item>
+    </style>
+    <!--字号32 字体颜色#333333-->
+    <style name="text_sixthree_threetwo">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_six_three</item>
+        <item name="android:textSize">@dimen/thirty_two</item>
+    </style>
+    <!--字号28 字体颜色#666666-->
+    <style name="text_six_eight">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_six_six</item>
+        <item name="android:textSize">@dimen/twenty_eight</item>
+    </style>
+    <!--字号26 字体颜色#666666-->
+    <style name="text_six_six">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_six_six</item>
+        <item name="android:textSize">@dimen/twenty_six</item>
+    </style>
+    <!--字号24 字体颜色#666666-->
+    <style name="text_six_four">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_six_six</item>
+        <item name="android:textSize">@dimen/twenty_four</item>
+    </style>
+    <!--字号20 字体颜色#666666-->
+    <style name="text_six_twenty">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_six_six</item>
+        <item name="android:textSize">@dimen/twenty</item>
+    </style>
+    <!--字号30 字体颜色#666666-->
+    <style name="text_six_thirty">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_six_six</item>
+        <item name="android:textSize">@dimen/thirty</item>
+    </style>
+    <!--字体颜色是#999999，字体大小30-->
+    <style name="text_sixnine">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/thirty</item>
+        <item name="android:textColor">@color/color_six_nine</item>
+    </style>
+    <!--字号28 字体颜色#5dcbf4-->
+    <style name="text_bule_eight">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_bule</item>
+        <item name="android:textSize">@dimen/twenty_eight</item>
+    </style>
+    <!--字体颜色是#333333，字体大小30-->
+    <style name="text_sixthree">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/thirty</item>
+        <item name="android:textColor">@color/color_six_three</item>
+    </style>
+    <style name="iv_next">
+        <item name="android:layout_width">@dimen/w16</item>
+        <item name="android:layout_height">@dimen/h30</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:background">@mipmap/def_next</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <!--高为100 背景为白色-->
+    <style name="ar_ll">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/h100</item>
+        <item name="android:background">@color/color_white</item>
+    </style>
+    <!-- LinearLayout 背景色为白色，高为90-->
+    <style name="set_ll">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/h90</item>
+        <item name="android:paddingLeft">@dimen/w30</item>
+        <item name="android:background">@color/color_white</item>
+    </style>
+    <!--高为70 背景为蓝色-->
+    <style name="btn_sumbit">
+        <item name="android:layout_width">@dimen/w500</item>
+        <item name="android:layout_height">@dimen/h70</item>
+        <item name="android:background">@drawable/btn_blue_bg</item>
+        <item name="android:textSize">@dimen/twenty_eight</item>
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <!-- 去黑边 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 设置是否可滑动 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 设置是否透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!--
+        点击空白部分activity不消失
+        <item name="android:windowCloseOnTouchOutside">false</item>
+
+        -->
+    </style>
+    <style name="push_style">
+        <item name="android:hint">@string/style_hint</item>
+        <item name="android:inputType">number</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="push_alias">
+        <item name="android:hint">@string/alias_hint</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="push_tag">
+        <item name="android:hint">@string/tag_hint</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+</resources>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/top"
+        layout="@layout/login_top"></include>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/h145"
+        android:paddingLeft="@dimen/w60"
+        android:paddingRight="@dimen/w60"
+        android:layout_below="@id/top"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="@dimen/w36"
+                android:layout_height="@dimen/h36"
+                android:background="@mipmap/def_mobile"
+                />
+            <EditText
+                android:id="@+id/et_phone"
+                style="@style/login_et_text"
+                android:layout_marginLeft="@dimen/w30"
+                android:hint="@string/et_phone"
+                android:inputType="number"
+                />
+        </LinearLayout>
+
+        <View
+            style="@style/login_view_line"
+             />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/h30"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/w36"
+                android:layout_height="@dimen/h36"
+                android:background="@mipmap/def_psw"
+                />
+
+            <EditText
+                android:id="@+id/et_password"
+                style="@style/login_et_text"
+                android:layout_marginLeft="@dimen/w30"
+                android:hint="@string/et_password"
+                android:inputType="textPassword"
+
+                />
+        </LinearLayout>
+
+        <View
+            style="@style/login_view_line"
+            />
+        <Button
+            android:id="@+id/btn_go"
+            style="@style/login_btn"
+            android:text="@string/text_login"
+            android:layout_marginTop="@dimen/h50"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/w30"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_register"
+                style="@style/tv_text_bule"
+                android:layout_gravity="center"
+                android:text="@string/tv_register"
+                 />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="@dimen/h28"
+                android:layout_marginLeft="@dimen/w24"
+                android:layout_marginRight="@dimen/w24"
+                android:alpha="0.5"
+                android:background="@color/color_view_line">
+            </View>
+            <TextView
+                android:id="@+id/tv_forget_password"
+                style="@style/tv_text_gray"
+                android:layout_gravity="center"
+                android:text="@string/tv_forget"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--底部按钮-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/w60"
+        android:paddingRight="@dimen/w60"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+         <View
+             android:layout_width="@dimen/w270"
+             android:layout_height="@dimen/h1"
+             android:background="@color/color_view">
+         </View>
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="@dimen/w15"
+             android:layout_marginRight="@dimen/w15"
+             android:textColor="@color/color_six_nine"
+             android:textSize="@dimen/twenty_four"
+             android:text="或"/>
+            <View
+                android:layout_width="@dimen/w270"
+                android:layout_height="@dimen/h1"
+                android:background="@color/color_view">
+            </View>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/h30"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/h40"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            >
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                >
+                <Button
+                    android:id="@+id/btn_weixin"
+                    android:layout_width="@dimen/w80"
+                    android:layout_height="@dimen/w80"
+                    android:background="@mipmap/weixin" />
+
+                <TextView
+                    style="@style/login_bottom_text"
+                    android:layout_below="@id/btn_weixin"
+                    android:text="@string/tv_wenxin"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                >
+                <Button
+                    android:id="@+id/btn_microblog"
+                    android:layout_width="@dimen/w80"
+                    android:layout_height="@dimen/w80"
+                    android:background="@mipmap/friend" />
+
+                <TextView
+                    style="@style/login_bottom_text"
+                    android:layout_below="@id/btn_microblog"
+                    android:text="@string/tv_microblog"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                >
+
+                <Button
+                    android:id="@+id/btn_qq"
+                    android:layout_width="@dimen/w80"
+                    android:layout_height="@dimen/w80"
+                    android:background="@mipmap/qq" />
+
+                <TextView
+                    style="@style/login_bottom_text"
+                    android:layout_below="@id/btn_qq"
+                    android:text="@string/tv_qq"
+                     />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/h20"
+    android:paddingBottom="@dimen/h20"
+    android:paddingLeft="@dimen/w30">
+
+   <TextView
+       android:id="@+id/tv_children_certificate"
+       android:layout_centerVertical="true"
+       style="@style/text_sixthree_eight"
+       />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:layout_marginRight="@dimen/w30"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv_children_look"
+            style="@style/text_sixthree_eight"
+            android:text="查看"
+            />
+      <ImageView
+          android:layout_width="@dimen/w16"
+          android:layout_height="@dimen/h30"
+          android:layout_marginLeft="@dimen/w30"
+          android:background="@mipmap/def_next"/>
+    </LinearLayout>
+
+</RelativeLayout>

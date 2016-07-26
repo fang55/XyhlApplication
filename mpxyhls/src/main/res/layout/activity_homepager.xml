@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/top"
+        layout="@layout/include_top"></include>
+
+    <LinearLayout
+        android:id="@+id/tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+        <View
+            style="@style/view_line"
+            android:layout_alignParentTop="true"
+            ></View>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/h100"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_home"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_home"
+                android:layout_width="@dimen/w44"
+                android:layout_height="@dimen/h44"
+                android:background="@mipmap/def_home"
+                />
+
+            <TextView
+                android:id="@+id/tv_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/tab_menu_item"
+                android:text="@string/tv_home"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_order"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_order"
+                android:layout_width="@dimen/w44"
+                android:layout_height="@dimen/h44"
+                android:background="@mipmap/def_message"
+                />
+
+            <TextView
+                android:id="@+id/tv_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/tab_menu_item"
+                android:text="@string/tv_order"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_my"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_my"
+                android:layout_width="@dimen/w44"
+                android:layout_height="@dimen/h44"
+                android:background="@mipmap/def_my"
+                />
+
+            <TextView
+                android:id="@+id/tv_my"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/tab_menu_item"
+                android:text="@string/tv_my"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/tab_bar"
+        android:layout_below="@id/top"
+        android:orientation="horizontal"></android.support.v4.view.ViewPager>
+
+</RelativeLayout>

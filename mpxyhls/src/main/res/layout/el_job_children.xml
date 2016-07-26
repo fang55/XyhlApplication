@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/w30">
+
+   <ImageView
+       android:id="@+id/iv_sel"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+      android:background="@mipmap/iv_radio"
+       />
+   <TextView
+       android:id="@+id/school"
+       style="@style/text_six_six"
+       android:layout_toRightOf="@id/iv_sel"
+       android:layout_marginLeft="@dimen/w20"
+       android:text="培训学校："
+       />
+
+    <TextView
+        android:id="@+id/tv_school"
+        style="@style/text_sixthree_four"
+        android:layout_toRightOf="@id/school"
+        android:layout_marginLeft="@dimen/w20"
+        />
+
+    <TextView
+        android:id="@+id/time"
+        style="@style/text_six_six"
+        android:layout_toRightOf="@id/iv_sel"
+        android:layout_marginLeft="@dimen/w20"
+        android:layout_below="@id/school"
+        android:layout_marginTop="@dimen/h25"
+        android:text="培训时间："
+        />
+
+    <TextView
+        android:id="@+id/tv_time"
+        style="@style/text_sixthree_four"
+        android:layout_toRightOf="@id/time"
+        android:layout_below="@id/school"
+        android:layout_marginLeft="@dimen/w20"
+        android:layout_marginTop="@dimen/h25"
+        />
+    <TextView
+        android:id="@+id/content"
+        style="@style/text_six_six"
+        android:layout_toRightOf="@id/iv_sel"
+        android:layout_marginLeft="@dimen/w20"
+        android:layout_below="@id/time"
+        android:layout_marginTop="@dimen/h25"
+        android:text="培训内容："
+        />
+
+    <TextView
+        android:id="@+id/tv_content"
+        style="@style/text_sixthree_four"
+        android:layout_toRightOf="@id/content"
+        android:layout_below="@id/time"
+        android:layout_marginLeft="@dimen/w20"
+        android:layout_marginTop="@dimen/h25"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:background="@mipmap/def_next"/>
+</RelativeLayout>

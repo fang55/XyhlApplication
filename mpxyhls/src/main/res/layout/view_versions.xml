@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <ImageView
+        android:id="@+id/iv_cen"
+        android:layout_width="@dimen/w140"
+        android:layout_height="@dimen/h140"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/h60"
+        android:layout_gravity="center"
+        android:background="@mipmap/login_cen"/>
+
+    <TextView
+        android:id="@+id/tv_cer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/twenty_six"
+        android:textColor="@color/color_bule"
+        android:layout_below="@id/iv_cen"
+        android:layout_marginTop="@dimen/h15"
+        android:layout_centerHorizontal="true"
+        android:text="心悦护理师"/>
+    <LinearLayout
+        style="@style/set_ll"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/h110"
+        android:gravity="center"
+        android:layout_below="@id/tv_cer"
+        >
+        <TextView
+            style="@style/text_six_eight"
+            android:layout_gravity="center"
+            android:text="@string/text_version"/>
+        <TextView
+            style="@style/text_sixthree_eight"
+            android:text="V1.0.2"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/h30"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/w24"
+            android:textColor="#c7c7c7"
+            android:text="Copyright ©2016 心悦护理 版权所有"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/w24"
+            android:textColor="#c7c7c7"
+            android:text="深圳市心悦云端技术有限公司"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+</RelativeLayout>
