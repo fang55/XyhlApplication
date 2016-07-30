@@ -79,7 +79,6 @@ public class HealthNurseActivity extends Activity implements View.OnClickListene
                      //   ll_level.setVisibility(View.VISIBLE);
                         showPriceLvl(listPriceLvl);
                     }
-
                     break;
                 case Constant.SERVICE_OPTION_LEVEL:
                     List<PriceLvl> list = (List<PriceLvl>) msg.obj;
@@ -165,6 +164,7 @@ public class HealthNurseActivity extends Activity implements View.OnClickListene
         Log.e("showSharedPreferencesfAddr","addr==="+addr);*/
         if(name.length() > 0 ){
             rl_addr.setVisibility(View.VISIBLE);
+
             tv_addr_name.setText(name);
             tv_addr_phone.setText(phone);
             tv_addr.setText(addr);

@@ -26,8 +26,6 @@ public class VolleyRequestUtil {
 	public static StringRequest stringRequest;
 	public static Context context;
 
-
-
 	private static class VolleyManagerHolder {
 		private static final VolleyRequestUtil INSTANCE = new VolleyRequestUtil();
 	}

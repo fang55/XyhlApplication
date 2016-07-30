@@ -1,8 +1,6 @@
 package com.szxyyd.mpxyhl.activity;
 
 import android.app.Activity;
-import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -10,7 +8,6 @@ import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.os.Message;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Gravity;
@@ -27,21 +24,30 @@ import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.android.volley.RequestQueue;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.szxyyd.mpxyhl.R;
 import com.szxyyd.mpxyhl.adapter.GridAdapter;
 import com.szxyyd.mpxyhl.fragment.MyOrderFragment;
 import com.szxyyd.mpxyhl.http.BitmapCache;
-import com.szxyyd.mpxyhl.http.VolleyRequestUtil;
-import com.szxyyd.mpxyhl.inter.VolleyListenerInterface;
 import com.szxyyd.mpxyhl.modle.ImageItem;
 import com.szxyyd.mpxyhl.modle.Order;
 import com.szxyyd.mpxyhl.utils.Bimp;
 import com.szxyyd.mpxyhl.utils.FileUtils;
 import com.szxyyd.mpxyhl.utils.PublicWay;
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 /**
  * 评价
@@ -66,10 +72,10 @@ public class OrderCommentActivity extends Activity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        order = (Order) getIntent().getSerializableExtra("order");
         parentView = getLayoutInflater().inflate(R.layout.activity_comment, null);
         setContentView(parentView);
         bimap = BitmapFactory.decodeResource(getResources(), R.mipmap.icon_addpic_unfocused);
-        order = (Order) getIntent().getSerializableExtra("order");
         mQueue = BaseApplication.getRequestQueue();
         mImageLoader = new ImageLoader(mQueue, new BitmapCache());
         PublicWay.activityList.add(this);
@@ -141,35 +147,57 @@ public class OrderCommentActivity extends Activity implements View.OnClickListen
     /**
      * 提交评论
      */
-    private void submitData(){
-        //nur?a=nurseCmt	cstid (客户id) nurseid (护理师id)  content (评论内容)   star (星级)
-        String url = Constant.nurseCmtUrl + "&cstid="+Constant.cstId
-                +"&nurseid="+order.getNurseid()
-                +"&content="+et_commcontent.getText().toString().trim()
-                +"&id="+order.getId()
-                +"&star="+starNum;
-        VolleyRequestUtil.newInstance().RequestGet(this, url, "nurseCmt",
-                new VolleyListenerInterface(this,VolleyListenerInterface.mListener,VolleyListenerInterface.mErrorListener) {
+    private void submitCommentData(){
+        MediaType MEDIA_TYPE_PNG = MediaType.parse("image/png");
+        Map<String,String> map = new HashMap<>();
+        map.put("bycstid",Constant.cstId);
+        map.put("nurseid",order.getNurseid());
+        map.put("content",et_commcontent.getText().toString().trim());
+        map.put("id",order.getId());
+        map.put("star",String.valueOf(starNum));
+        MultipartBody.Builder multipartBody = new MultipartBody.Builder().setType(MultipartBody.FORM);
+        //遍历map中所有参数到builder
+        for (String key : map.keySet()) {
+            multipartBody.addFormDataPart(key, map.get(key));
+        }
+        //遍历paths中所有图片绝对路径到builder，并约定key如“file”作为后台接受多张图片的key
+        if(Bimp.tempSelectBitmap.size()>0){
+            for(int i = 0;i<Bimp.tempSelectBitmap.size();i++){
+                File file = new File(Bimp.tempSelectBitmap.get(i).getImagePath());
+                multipartBody.addFormDataPart("file",file.getName(), RequestBody.create(MEDIA_TYPE_PNG, file));
+            //    Log.e("tempSelectBitmap","file==="+file);
+            }
+        }
+        RequestBody requestBody = multipartBody.build();
+        Request request = new Request.Builder()
+                .url(Constant.nurseCmtUrl)
+                .post(requestBody)
+                .build();
+       //设置超时
+        OkHttpClient.Builder builder = new OkHttpClient.Builder()
+                .connectTimeout(10, TimeUnit.SECONDS)//设置超时时间
+                .readTimeout(10, TimeUnit.SECONDS)//设置读取超时时间
+                .writeTimeout(10, TimeUnit.SECONDS);//设置写入超时时间;
+        builder.build().newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+               Log.e("OrderCommentActivity","call.toString()=="+call.toString());
+            }
+            @Override
+            public void onResponse(Call call, final  Response response) throws IOException {
+                runOnUiThread(new Runnable() {
                     @Override
-                    public void onSuccess(String result) {
-                        Log.e("CommentDialog", "CommentDialog---result=="+result);
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                Toast.makeText(BaseApplication.getInstance(),"已评论",Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(OrderCommentActivity.this,MyOrderFragment.class);
-                                setResult(2, intent);
-                                finish();
-                            }
-                        });
-                    }
-                    @Override
-                    public void onError(VolleyError error) {
-
+                    public void run() {
+                        Toast.makeText(BaseApplication.getInstance(),"已评论",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(OrderCommentActivity.this,MyOrderFragment.class);
+                        setResult(2, intent);
+                        finish();
                     }
                 });
-
+            }
+        });
     }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()){
@@ -177,7 +205,7 @@ public class OrderCommentActivity extends Activity implements View.OnClickListen
                 finish();
                 break;
             case R.id.btn_comm_sunmit:
-                submitData();
+                submitCommentData();
                 break;
             case R.id.parent:
                 pop.dismiss();
@@ -189,8 +217,7 @@ public class OrderCommentActivity extends Activity implements View.OnClickListen
                 ll_popup.clearAnimation();
                 break;
             case R.id.item_popupwindows_Photo: //选择照片
-                Intent intent = new Intent(OrderCommentActivity.this,
-                        AlbumActivity.class);
+                Intent intent = new Intent(OrderCommentActivity.this, AlbumActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.activity_translate_in, R.anim.activity_translate_out);
                 pop.dismiss();
@@ -223,7 +250,6 @@ public class OrderCommentActivity extends Activity implements View.OnClickListen
                     String fileName = String.valueOf(System.currentTimeMillis());
                     Bitmap bm = (Bitmap) data.getExtras().get("data");
                     FileUtils.saveBitmap(bm, fileName);
-
                     ImageItem takePhoto = new ImageItem();
                     takePhoto.setBitmap(bm);
                     Bimp.tempSelectBitmap.add(takePhoto);

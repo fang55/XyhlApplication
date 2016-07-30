@@ -14,6 +14,8 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +26,7 @@ import com.android.volley.toolbox.ImageLoader;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.szxyyd.mpxyhl.R;
+import com.szxyyd.mpxyhl.adapter.EvaluateAdapter;
 import com.szxyyd.mpxyhl.http.BitmapCache;
 import com.szxyyd.mpxyhl.http.VolleyRequestUtil;
 import com.szxyyd.mpxyhl.inter.VolleyListenerInterface;
@@ -54,11 +57,12 @@ public class NurseDetailsActivity extends Activity implements View.OnClickListen
     private LinearLayout ll_star;//评分数
     private LinearLayout ll_image; //生活照
     private LinearLayout ll_train; //培训经历
-    private LinearLayout ll_evaluate; //评价
     private LinearLayout ll_video; //视频
     private WebView wv_video;  //播放视频
     private Button btn_start;
     private Button btn_collect; //收藏
+    private ListView lv_evaluate;
+    private RelativeLayout ll_evaMore;
     private NurseList nurse;
     private List<String> cerImage = new ArrayList<>(); //存储生活照
     private RequestQueue mQueue;
@@ -85,7 +89,16 @@ public class NurseDetailsActivity extends Activity implements View.OnClickListen
                     break;
                 case Constant.SUCCEED:
                     List<NurseList> nurseLists = (List<NurseList>) msg.obj;
-                    showEvaluateData(nurseLists);
+                    if(nurseLists.size() != 0){
+                        if(nurseLists.size() > 3){
+                            ll_evaMore.setVisibility(View.VISIBLE);
+                        }
+                        lv_evaluate.setVisibility(View.VISIBLE);
+                        showEvaluateData(nurseLists);
+                    }else{
+                        ll_evaMore.setVisibility(View.GONE);
+                        lv_evaluate.setVisibility(View.GONE);
+                    }
                     break;
                 case Constant.SERVICE_LEVEL: ////1294110
                     List<NurseTrain> trainList = (List<NurseTrain>) msg.obj;
@@ -121,7 +134,8 @@ public class NurseDetailsActivity extends Activity implements View.OnClickListen
         ll_star = (LinearLayout) findViewById(R.id.ll_star);
         ll_train = (LinearLayout) findViewById(R.id.ll_train);
         ll_image = (LinearLayout) findViewById(R.id.ll_image);
-        ll_evaluate = (LinearLayout) findViewById(R.id.ll_evaluate);
+        ll_evaMore = (RelativeLayout) findViewById(R.id.ll_evaMore);
+        lv_evaluate = (ListView) findViewById(R.id.lv_evaluate);
         ll_video = (LinearLayout) findViewById(R.id.ll_video);
         ImageLoader.ImageListener listener = ImageLoader.getImageListener(image_theach, 0, R.mipmap.teach);
         mImageLoader.get(Constant.nurseImage + nurse.getIcon(), listener);
@@ -131,6 +145,7 @@ public class NurseDetailsActivity extends Activity implements View.OnClickListen
         btn_back.setOnClickListener(this);
         btn_order.setOnClickListener(this);
         btn_collect.setOnClickListener(this);
+        ll_evaMore.setOnClickListener(this);
     }
 
     /**
@@ -213,6 +228,7 @@ public class NurseDetailsActivity extends Activity implements View.OnClickListen
      * 获取护理师详情
      */
     private void lodeDetailsData(){
+        //1294016
         Map<String, String> map = new HashMap<String, String>();
         map.put("nurid",nurse.getNursvrid());
         map.put("cstid",Constant.cstId);
@@ -273,13 +289,9 @@ public class NurseDetailsActivity extends Activity implements View.OnClickListen
                 });
     }
     private void showEvaluateData(List<NurseList> list){
-        ll_evaluate.removeAllViews();
-        for(int i = 0;i<list.size();i++){
-            View view = getLayoutInflater().inflate(R.layout.listview_item_evaluate,null,false);
-            TextView tv_evcontent = (TextView) view.findViewById(R.id.tv_evcontent);
-            tv_evcontent.setText(list.get(i).getContent());
-            ll_evaluate.addView(view);
-        }
+        EvaluateAdapter adapter = new EvaluateAdapter(this,list);
+        lv_evaluate.setAdapter(adapter);
+
     }
     /**
      * 获取培训经历
@@ -378,6 +390,13 @@ public class NurseDetailsActivity extends Activity implements View.OnClickListen
                    addCollect("add");
                    Toast.makeText(this,"已收藏",Toast.LENGTH_SHORT).show();
                }
+               break;
+           case R.id.ll_evaMore:
+               Intent intentEva = new Intent(NurseDetailsActivity.this,EvaluateActivity.class);
+               Bundle bundleEva = new Bundle();
+               bundleEva.putSerializable("nurse", nurse);
+               intentEva.putExtras(bundleEva);
+               startActivity(intentEva);
                break;
        }
     }

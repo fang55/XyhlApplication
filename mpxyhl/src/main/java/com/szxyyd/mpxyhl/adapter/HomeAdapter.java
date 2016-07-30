@@ -1,6 +1,7 @@
 package com.szxyyd.mpxyhl.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,7 +56,7 @@ public class HomeAdapter extends BaseAdapter{
         }else{
             viewHolder = (ViewHolder) contentView.getTag();
         }
-
+        Log.e("HomeAdapter","nurseType.getName()=="+nurseType.getName());
         viewHolder.tv_title.setText(nurseType.getName());
         viewHolder.iv_mark.setBackgroundResource(incoData[position]);
         return contentView;

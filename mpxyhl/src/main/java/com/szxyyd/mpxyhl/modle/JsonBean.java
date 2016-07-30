@@ -19,9 +19,6 @@ public class JsonBean {
     private List<City> county; //获取城市市区
     private List<Order> orderList;
 
-    public JsonBean() {
-        super();
-    }
     public List<Order> getOrderList() {
         return orderList;
     }

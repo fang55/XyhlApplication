@@ -45,7 +45,7 @@ public class HomePagerActivity extends FragmentActivity implements View.OnClickL
     private LinearLayout ll_city = null;
     private ViewPager viewPager = null;
     private Fragment homeFragment = null;
-    private Fragment commFragment = null;
+    private Fragment orderFragment = null;
     private Fragment messageFragment = null;
     private Fragment myFragment = null;
     private List<Fragment> listFragment;
@@ -75,16 +75,16 @@ public class HomePagerActivity extends FragmentActivity implements View.OnClickL
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         listFragment = new ArrayList<Fragment>();
         homeFragment = new HomePagerFragment();
-        commFragment = new CommFragment();
+        orderFragment = new MyOrderFragment();
         messageFragment = new MessageFragment();
         myFragment = new MyFragment();
         listFragment.add(homeFragment);
-        listFragment.add(commFragment);
+        listFragment.add(orderFragment);
         listFragment.add(messageFragment);
         listFragment.add(myFragment);
         mAdapter = new HomeFragmentPagerAdapter(getSupportFragmentManager(),listFragment);
         viewPager.setAdapter(mAdapter);
-        viewPager.setCurrentItem(1);
+        viewPager.setCurrentItem(0);
         viewPager.setOnPageChangeListener(this);
         changeTextColor(tv_home,tv_order,tv_message,tv_my);
         changeImageBg(R.mipmap.def_home_sel,R.mipmap.def_community,R.mipmap.def_message,R.mipmap.def_my);
@@ -133,7 +133,6 @@ public class HomePagerActivity extends FragmentActivity implements View.OnClickL
     public void onPageSelected(int position) {
         //当viewPager滑动的时候
         int currentPage = viewPager.getCurrentItem();
-        Log.e("HomePagerActivity","currentPage=="+currentPage);
         switch (currentPage) {
             case Constant.PAGE_ONE:
                 changeTextColor(tv_home,tv_order,tv_message,tv_my);
@@ -181,23 +180,15 @@ public class HomePagerActivity extends FragmentActivity implements View.OnClickL
                 startActivity(intentAdvice);
                 break;
             case R.id.ll_home:
-                changeTextColor(tv_home,tv_order,tv_message,tv_my);
-                changeImageBg(R.mipmap.def_home_sel,R.mipmap.def_community,R.mipmap.def_message,R.mipmap.def_my);
                 viewPager.setCurrentItem(Constant.PAGE_ONE);
                 break;
             case R.id.ll_order:
-                changeTextColor(tv_order,tv_home,tv_message,tv_my);
-                changeImageBg(R.mipmap.def_home,R.mipmap.def_community_sel,R.mipmap.def_message,R.mipmap.def_my);
                 viewPager.setCurrentItem(Constant.PAGE_TWO);
                 break;
             case R.id.ll_message:
-                changeTextColor(tv_message,tv_order,tv_home,tv_my);
-                changeImageBg(R.mipmap.def_home,R.mipmap.def_community,R.mipmap.def_message_sel,R.mipmap.def_my);
                 viewPager.setCurrentItem(Constant.PAGE_THREE);
                 break;
             case R.id.ll_my:
-                changeTextColor(tv_my,tv_order,tv_message,tv_home);
-                changeImageBg(R.mipmap.def_home,R.mipmap.def_community,R.mipmap.def_message,R.mipmap.def_my_sel);
                 viewPager.setCurrentItem(Constant.PAGE_FOUR);
                 break;
         }

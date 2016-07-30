@@ -9,6 +9,9 @@ public class DetailFile {
     private String title;
     private String atrec;
     private String type;
+    private String cmtid;
+    private String ordid;
+    private String imgname;
 
     public DetailFile() {
         super();
@@ -52,5 +55,29 @@ public class DetailFile {
 
     public void setFiles(String files) {
         this.files = files;
+    }
+
+    public String getCmtid() {
+        return cmtid;
+    }
+
+    public void setCmtid(String cmtid) {
+        this.cmtid = cmtid;
+    }
+
+    public String getOrdid() {
+        return ordid;
+    }
+
+    public void setOrdid(String ordid) {
+        this.ordid = ordid;
+    }
+
+    public String getImgname() {
+        return imgname;
+    }
+
+    public void setImgname(String imgname) {
+        this.imgname = imgname;
     }
 }

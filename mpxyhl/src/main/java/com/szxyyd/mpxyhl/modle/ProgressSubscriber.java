@@ -1,13 +1,11 @@
 package com.szxyyd.mpxyhl.modle;
 
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.util.Log;
 import android.widget.Toast;
-
-import com.szxyyd.mpxyhl.activity.BaseApplication;
-import com.szxyyd.mpxyhl.inter.ProgressCancelListener;
 import com.szxyyd.mpxyhl.inter.SubscriberOnNextListener;
-
 import java.lang.ref.WeakReference;
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
@@ -18,29 +16,64 @@ import rx.Subscriber;
  * 在Http请求结束是，关闭ProgressDialog
  * 调用者自己对请求数据进行处理
  */
-public class ProgressSubscriber<T> extends Subscriber<T> implements ProgressCancelListener {
+public class ProgressSubscriber<T> extends Subscriber<T> {
     private SubscriberOnNextListener mSubscriberOnNextListener;
-    private ProgressDialogHandler mProgressDialogHandler;
     private WeakReference<Context> mActivity;
+    //    是否能取消请求
+    private boolean cancel;
+    //    加载框可自己定义
+    private ProgressDialog pd;
 
     public ProgressSubscriber(SubscriberOnNextListener mSubscriberOnNextListener, Context context) {
         this.mSubscriberOnNextListener = mSubscriberOnNextListener;
         this.mActivity = new WeakReference<>(context);
-        mProgressDialogHandler = new ProgressDialogHandler(context,this, true);
+        this.cancel = true;
+        initProgressDialog();
     }
-
-    private void showProgressDialog(){
-        if (mProgressDialogHandler != null) {
-            mProgressDialogHandler.obtainMessage(ProgressDialogHandler.SHOW_PROGRESS_DIALOG).sendToTarget();
+    public ProgressSubscriber(SubscriberOnNextListener mSubscriberOnNextListener, Context context, boolean cancel) {
+        this.mSubscriberOnNextListener = mSubscriberOnNextListener;
+        this.mActivity = new WeakReference<>(context);
+        this.cancel = cancel;
+        initProgressDialog();
+    }
+    /**
+     * 初始化加载框
+     */
+    private void initProgressDialog() {
+        Context context = mActivity.get();
+        if (pd == null && context != null) {
+            pd = new ProgressDialog(context);
+            pd.setCancelable(cancel);
+            if (cancel) {
+                pd.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                    @Override
+                    public void onCancel(DialogInterface dialogInterface) {
+                        onCancelProgress();
+                    }
+                });
+            }
+        }
+    }
+    /**
+     * 显示加载框
+     */
+    private void showProgressDialog() {
+        Context context = mActivity.get();
+        if (pd == null || context == null) return;
+        if (!pd.isShowing()) {
+            pd.show();
         }
     }
 
-    private void dismissProgressDialog(){
-        if (mProgressDialogHandler != null) {
-            mProgressDialogHandler.obtainMessage(ProgressDialogHandler.DISMISS_PROGRESS_DIALOG).sendToTarget();
-            mProgressDialogHandler = null;
+    /**
+     * 隐藏
+     */
+    private void dismissProgressDialog() {
+        if (pd != null && pd.isShowing()) {
+            pd.dismiss();
         }
     }
+
 
     /**
      * 订阅开始时调用
@@ -90,11 +123,9 @@ public class ProgressSubscriber<T> extends Subscriber<T> implements ProgressCanc
             mSubscriberOnNextListener.onNext(t);
         }
     }
-
     /**
      * 取消ProgressDialog的时候，取消对observable的订阅，同时也取消了http请求
      */
-    @Override
     public void onCancelProgress() {
         if (!this.isUnsubscribed()) {
             this.unsubscribe();

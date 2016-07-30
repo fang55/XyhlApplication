@@ -45,12 +45,11 @@ public class HomePagerFragment extends Fragment {
         super.onAttach(context);
         mActivity = (HomePagerActivity) context;
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_homepager,container,false);
-        initView();
         lodeData();
+        initView();
         return rootView;
     }
     private void initView(){

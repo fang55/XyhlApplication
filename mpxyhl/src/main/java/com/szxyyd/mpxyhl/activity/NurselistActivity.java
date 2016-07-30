@@ -134,7 +134,7 @@ public class NurselistActivity extends Activity implements View.OnClickListener{
             sb.append(key).append(param.get(key));
         }
         String result = sb.toString();
-        Log.e("NurselistActivity","lodeData--result=="+result);
+        Log.e("NurselistActivity","result=="+result);
         HttpMethods.getInstance().getNurseListData("nurList",param,new ProgressSubscriber<JsonBean>(getNurserOnNext,this));
     }
     private void showPopupWindow(View rootView,String[] data,final int index){

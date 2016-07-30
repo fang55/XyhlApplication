@@ -1,6 +1,7 @@
 package com.szxyyd.mpxyhl.modle;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class NurseList implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -28,6 +29,7 @@ public class NurseList implements Serializable{
 	private int fvrid; //是否收藏
 	private int fvrnur; //收藏次数
 	private String workvideo; //视频
+	private List<DetailFile> ordFiles; //评论图片
 	public NurseList() {
 		super();
 	}
@@ -220,5 +222,12 @@ public class NurseList implements Serializable{
 
 	public void setWorkvideo(String workvideo) {
 		this.workvideo = workvideo;
+	}
+
+	public List<DetailFile> getOrdFiles() {
+		return ordFiles;
+	}
+	public void setOrdFiles(List<DetailFile> ordFiles) {
+		this.ordFiles = ordFiles;
 	}
 }

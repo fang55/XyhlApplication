@@ -1,7 +1,5 @@
 package com.szxyyd.mpxyhl.activity;
 
-import com.szxyyd.mpxyhl.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +31,7 @@ public class Constant {
 	public static final int CHOOSE_PICTURE = 1;
 	public static int screenWidth = 0;
 	public static int screenHeigh = 0;
-	public static String cstId = null;//客户Id
+	public static String cstId = "6";//客户Id
 	public static String usrId = null;
 	public static int svrId = 0;//服务类别
 	public static String lvlTitle = null;//服务级别
@@ -45,16 +43,18 @@ public class Constant {
 	public static List<String> listLevel = new ArrayList<String>();
 	public static List<String> listpople = new ArrayList<String>();
 	//外网服务地址
-	 public static String baseUrl = "http://183.232.35.71:8080/xyhl/";
-	 public static String baseFileUrl = "http://183.232.35.71:8080/";
+	 public static String baseUrl = "http://120.25.101.140:8080/xyhl/";
+	 public static String baseFileUrl = "http://120.25.101.140:8080/";
 	// 服务器地址
 	/*public static String baseUrl = "http://192.168.111.131:8080/xyhl/";
 	public static String baseFileUrl = "http://192.168.111.131:8080/";*/
 
-	/*public static String baseUrl = "http://192.168.111.131:8080/xyhl/";
-	public static String baseImageUrl = "http://192.168.111.131:8080/";*/
+	/* public static String baseUrl = "http://183.232.35.71:8080/xyhl/";
+	 public static String baseFileUrl = "http://183.232.35.71:8080/";*/
 	//  图片路径http://192.168.1.131:8080/upload//icon//522701199211222108.jpg
 	public static String nurseImage = baseFileUrl+"upload//icon//";
+	//评论图片
+	public static String evaluateImage =baseFileUrl+"upload/orderfiles//";
 	//  生活照
 	public static String lifePic = baseFileUrl+"upload//lifepic//";
 	//工作视频
@@ -130,7 +130,7 @@ public class Constant {
    public static String odrCstUpdUrl = baseUrl + "ord?a=odrCstUpd";
    //订单列表 nurseid(护理师id)/ cstid(顾客id) status （订单状态
    public static String mktOrderListUrl = baseUrl + "ord?a=mktOrderList";
-  //获取评论列表
+  //提交评论  http://183.232.35.71:8080/xyhl/nur?a=nurseCmtAll&bycstid=6&nurseid=1294110&content="不错"&id=201607283674818&star=5;
   public static String nurseCmtAllUrl = baseUrl + "nur?a=nurseCmtAll";
   //反馈  id (用户意见id)  resp （反馈内容）
   public static String respUpdAllUrl = baseUrl + "cst?a=respUpd";

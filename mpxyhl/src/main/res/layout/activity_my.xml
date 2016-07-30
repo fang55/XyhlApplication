@@ -24,29 +24,6 @@
           />
   </LinearLayout>
     <RelativeLayout
-        android:id="@+id/rl_order"
-        style="@style/my_rl"
-        >
-        <ImageView
-            android:id="@+id/iv_location"
-            style="@style/my_iv"
-            android:background="@mipmap/my_order"/>
-        <TextView
-            style="@style/text_sixthree"
-            android:layout_marginLeft="@dimen/w30"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/iv_location"
-            android:text="我的订单"/>
-        <ImageView
-            android:layout_marginRight="@dimen/w30"
-            style="@style/my_next"/>
-        <View
-            style="@style/view_line"
-            android:layout_marginLeft="@dimen/w80"
-            android:layout_alignParentBottom="true"
-            ></View>
-    </RelativeLayout>
-    <RelativeLayout
         android:id="@+id/rl_location"
         style="@style/my_rl"
         >

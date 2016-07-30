@@ -1,14 +1,10 @@
 package com.szxyyd.mpxyhl.fragment;
 
-import android.app.Activity;
-import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.os.Parcelable;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,39 +13,34 @@ import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import com.android.volley.VolleyError;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.szxyyd.mpxyhl.R;
-import com.szxyyd.mpxyhl.activity.BaseApplication;
 import com.szxyyd.mpxyhl.activity.ConfirmOrderActivity;
 import com.szxyyd.mpxyhl.activity.Constant;
+import com.szxyyd.mpxyhl.activity.HomePagerActivity;
 import com.szxyyd.mpxyhl.activity.OrderCommentActivity;
 import com.szxyyd.mpxyhl.activity.OrderDetailsActivity;
 import com.szxyyd.mpxyhl.adapter.MyOrderAdapter;
 import com.szxyyd.mpxyhl.http.HttpMethods;
-import com.szxyyd.mpxyhl.http.VolleyRequestUtil;
+import com.szxyyd.mpxyhl.inter.CallOnResponsetListener;
 import com.szxyyd.mpxyhl.inter.SubscriberOnNextListener;
-import com.szxyyd.mpxyhl.inter.VolleyListenerInterface;
 import com.szxyyd.mpxyhl.modle.JsonBean;
 import com.szxyyd.mpxyhl.modle.Order;
 import com.szxyyd.mpxyhl.modle.ProgressSubscriber;
+import com.szxyyd.mpxyhl.utils.OkHttp3Utils;
 import com.szxyyd.mpxyhl.view.PopupDialog;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.Serializable;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import okhttp3.Call;
+import okhttp3.Response;
 
 /**
  * 我的订单
  * Created by fq on 2016/7/6.
  */
-public class MyOrderFragment extends Activity {
+public class MyOrderFragment extends Fragment {
+    private View rootView;
     private RadioGroup rgChannel = null;
     public  RadioButton rb1 = null;
     private RadioButton rb2 = null;
@@ -58,51 +49,29 @@ public class MyOrderFragment extends Activity {
     private RadioButton rb5 = null;
     private RadioButton rb6 = null;
     private GridView gv_order = null;
-    private List<Order> list = null;;
+    private List<Order> list = null;
     private MyOrderAdapter adapter = null;
     private String ordCode = "0";
-    private LinearLayout ll_notorder = null;;
+    private LinearLayout ll_notorder = null;
     public  int ORDER_STATES  ;
-    private SubscriberOnNextListener getOrderOnNext;
+    private HomePagerActivity mActivity;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_myorder);
-        initView();
-        showOrderData();
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mActivity = (HomePagerActivity) context;
     }
-    private void showOrderData(){
-                getOrderOnNext = new SubscriberOnNextListener<JsonBean>() {
-                    @Override
-                    public void onNext(JsonBean jsonBean) {
-                        list = jsonBean.getOrderList();
-                        if(list.size() != 0) {
-                            ll_notorder.setVisibility(View.GONE);
-                            adapter = new MyOrderAdapter(MyOrderFragment.this,list);
-                            gv_order.setAdapter(adapter);
-                            adapter.notifyDataSetChanged();
-                            adapter.setclickListener(new MyOrderAdapter.onSelectListener() {
-                                @Override
-                                public void onSelect(int position,int code,String getCode) {
-                                    Order order = list.get(position);
-                                    ordCode = getCode;
-                                    if(code == 900){//取消按钮状态
-                                        cancleOrder(order);
-                                    }else{ //接受按钮状态
-                                        sumbitTyoeData(getCode,order);
-                                    }
-                                }
-                            });
-                        }else{
-                            ll_notorder.setVisibility(View.VISIBLE);
-                        }
-                    }
-                };
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        rootView = inflater.inflate(R.layout.activity_myorder,container,false);
+        initView();
+        return rootView;
     }
     private void initView(){
-        ll_notorder = (LinearLayout) findViewById(R.id.ll_notorder);
-        gv_order = (GridView) findViewById(R.id.gv_order);
+        ll_notorder = (LinearLayout) rootView.findViewById(R.id.ll_notorder);
+        gv_order = (GridView) rootView.findViewById(R.id.gv_order);
         gv_order.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
@@ -112,13 +81,13 @@ public class MyOrderFragment extends Activity {
                 showDetailsView(states,order);
             }
         });
-        rgChannel=(RadioGroup)findViewById(R.id.rgChannel);
-        rb1 = (RadioButton) findViewById(R.id.rb1);
-        rb2 = (RadioButton)findViewById(R.id.rb2);
-        rb3 = (RadioButton) findViewById(R.id.rb3);
-        rb4 = (RadioButton) findViewById(R.id.rb4);
-        rb5 = (RadioButton) findViewById(R.id.rb5);
-        rb6 = (RadioButton) findViewById(R.id.rb6);
+        rgChannel=(RadioGroup)rootView.findViewById(R.id.rgChannel);
+        rb1 = (RadioButton) rootView.findViewById(R.id.rb1);
+        rb2 = (RadioButton)rootView.findViewById(R.id.rb2);
+        rb3 = (RadioButton) rootView.findViewById(R.id.rb3);
+        rb4 = (RadioButton) rootView.findViewById(R.id.rb4);
+        rb5 = (RadioButton) rootView.findViewById(R.id.rb5);
+        rb6 = (RadioButton) rootView.findViewById(R.id.rb6);
         rgChannel.setOnCheckedChangeListener(
                 new RadioGroup.OnCheckedChangeListener() {
                     @Override
@@ -170,10 +139,13 @@ public class MyOrderFragment extends Activity {
         if(getCode.equals("300")){ //待支付
             showDetailsView(ordCode,order);
         }else if(getCode.equals("400") ){ //待服务
+            ordCode = "400";
             submitData(order,"800");
         }else if(getCode.equals("800")){ //服务中
+            ordCode = "800";
             submitData(order,"1100");
         }else if(getCode.equals("1100")){ //待评价
+            ordCode = "1100";
             showDetailsView(ordCode,order);
         }
     }
@@ -183,15 +155,15 @@ public class MyOrderFragment extends Activity {
      */
    private void showDetailsView(String states,Order order){
        if(states.equals("300")){  //待支付
-           Intent intentConfirm = new Intent(MyOrderFragment.this,ConfirmOrderActivity.class);
+           Intent intentConfirm = new Intent(getActivity(),ConfirmOrderActivity.class);
            intentConfirm.putExtra("order",  order);
            startActivityForResult(intentConfirm,  1);
        }else if(states.equals("1100")){ //评价
-           Intent intentComment = new Intent(MyOrderFragment.this,OrderCommentActivity.class);
+           Intent intentComment = new Intent(getActivity(),OrderCommentActivity.class);
            intentComment.putExtra("order", order);
            startActivityForResult(intentComment,  2);
        }else{ //订单详情
-           Intent intentDetails = new Intent(MyOrderFragment.this,OrderDetailsActivity.class);
+           Intent intentDetails = new Intent(getActivity(),OrderDetailsActivity.class);
            intentDetails.putExtra("order", order);
            startActivityForResult(intentDetails,  3);
        }
@@ -210,7 +182,7 @@ public class MyOrderFragment extends Activity {
      * @param order
      */
     private void cancleOrder(final Order order){
-        PopupDialog dialog = new PopupDialog(MyOrderFragment.this,"order");
+        PopupDialog dialog = new PopupDialog(getActivity(),"order");
         dialog.initView();
         dialog.setonSelectListener(new PopupDialog.onSelectClickListener() {
             @Override
@@ -219,12 +191,6 @@ public class MyOrderFragment extends Activity {
             }
         });
     }
-     SubscriberOnNextListener getsubmitOnNext = new SubscriberOnNextListener<String>() {
-         @Override
-         public void onNext(String str) {
-             getData(Integer.parseInt(ordCode));
-         }
-     };
     /**
      * 提交订单
      * @param order
@@ -232,19 +198,57 @@ public class MyOrderFragment extends Activity {
      */
     private void submitData(Order order,String status){
         String orid = order.getId();
-        HttpMethods.getInstance().submitOrderData("odrCstUpd",orid,status,new ProgressSubscriber<String>(getsubmitOnNext,MyOrderFragment.this));
+        Map<String,String> map = new HashMap<>();
+        map.put("id",orid);
+        map.put("status",status);
+        OkHttp3Utils.getInstance().requestPost(Constant.odrCstUpdUrl,map);
+        OkHttp3Utils.getInstance().setOnResultListener(new CallOnResponsetListener() {
+            @Override
+            public void onSuccess(Call call, Response response) {
+                mActivity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        getData(Integer.parseInt(ordCode));
+                    }
+                });
+            }
+        });
     }
-
     /**
      * 根据状态获取订单
      * @param states
      */
     public void getData(int states){
         if(states == 0) {
-            HttpMethods.getInstance().getOrderListData("mktOrderList",Constant.cstId,new ProgressSubscriber<JsonBean>(getOrderOnNext,MyOrderFragment.this));
+            HttpMethods.getInstance().getOrderListData("mktOrderList",Constant.cstId,new ProgressSubscriber<JsonBean>(getOrderOnNext,getActivity()));
         }else{
-            HttpMethods.getInstance().getOrderListData("mktOrderList",Constant.cstId,states,new ProgressSubscriber<JsonBean>(getOrderOnNext,MyOrderFragment.this));
+            HttpMethods.getInstance().getOrderListData("mktOrderList",Constant.cstId,states,new ProgressSubscriber<JsonBean>(getOrderOnNext,getActivity()));
         }
     }
-
+    private SubscriberOnNextListener getOrderOnNext = new SubscriberOnNextListener<JsonBean>() {
+        @Override
+        public void onNext(JsonBean jsonBean) {
+            list = jsonBean.getOrderList();
+            if(list.size() != 0) {
+                ll_notorder.setVisibility(View.GONE);
+                adapter = new MyOrderAdapter(getActivity(),list);
+                gv_order.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
+                adapter.setclickListener(new MyOrderAdapter.onSelectListener() {
+                    @Override
+                    public void onSelect(int position,int code,String getCode) {
+                        Order order = list.get(position);
+                        ordCode = getCode;
+                        if(code == 900){//取消按钮状态
+                            cancleOrder(order);
+                        }else{ //接受按钮状态
+                            sumbitTyoeData(getCode,order);
+                        }
+                    }
+                });
+            }else{
+                ll_notorder.setVisibility(View.VISIBLE);
+            }
+        }
+    };
 }

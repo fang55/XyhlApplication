@@ -28,14 +28,26 @@ import com.android.volley.VolleyError;
 import com.google.gson.reflect.TypeToken;
 import com.szxyyd.mpxyhl.R;
 import com.szxyyd.mpxyhl.adapter.RegionAdapter;
+import com.szxyyd.mpxyhl.http.HttpMethods;
 import com.szxyyd.mpxyhl.http.VolleyRequestUtil;
+import com.szxyyd.mpxyhl.inter.CallOnResponsetListener;
+import com.szxyyd.mpxyhl.inter.SubscriberOnNextListener;
 import com.szxyyd.mpxyhl.inter.VolleyListenerInterface;
 import com.szxyyd.mpxyhl.modle.City;
 import com.szxyyd.mpxyhl.modle.JsonBean;
+import com.szxyyd.mpxyhl.modle.ProgressSubscriber;
 import com.szxyyd.mpxyhl.modle.Reladdr;
+import com.szxyyd.mpxyhl.utils.OkHttp3Utils;
+
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
 
 /**
  * 添加、编辑服务地址
@@ -152,34 +164,52 @@ public class EditAddressActivity extends Activity implements View.OnClickListene
         }
         final String place = region + addr;
         String url = null;
+        Map<String,String> map = new HashMap<>();
+        map.put("name",name);
+        map.put("mobile",mobile);
+        map.put("addr",place);
+        map.put("ifdef",String.valueOf(dwonIfdef));
         if (states.equals("add")) {
-            url = Constant.addAddresUrl + "&cstid=" + Constant.cstId
-                    + "&name=" + name + "&mobile=" + mobile + "&addr=" + place + "&ifdef=" + dwonIfdef;
+            HttpMethods.getInstance().submitAddAddresData("addAddres",Constant.cstId,map,new ProgressSubscriber<String>(getResultOnNext,this));
         } else{
-            //id(服务地址id)
-            url = Constant.saveAddresUrl + "&id=" + reladdr.getId()
-                   + "&name=" + name + "&mobile=" + mobile + "&addr=" + addr + "&ifdef=" + dwonIfdef;
+            Log.e("EditAddressActivity", "addLocationData--reladdr.getId()==" + reladdr.getId());
+            map.put("id",String.valueOf(reladdr.getId()));
+            OkHttp3Utils.getInstance().requestPost(Constant.saveAddresUrl,map);
+            OkHttp3Utils.getInstance().setOnResultListener(new CallOnResponsetListener() {
+                @Override
+                public void onSuccess(Call call, okhttp3.Response response) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            SharedPreferences preferences = getSharedPreferences(Constant.cstId+"defaddr", Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = preferences.edit();
+                            editor.putString("name", et_name.getText().toString());
+                            editor.putString("mobile", et_phone.getText().toString());
+                            editor.putString("addr", place);
+                            editor.commit();
+                            finish();
+                        }
+                    });
+                }
+            });
         }
-        VolleyRequestUtil.newInstance().RequestGet(BaseApplication.getInstance(), url, states,
-                new VolleyListenerInterface(BaseApplication.getInstance(), VolleyListenerInterface.mListener, VolleyListenerInterface.mErrorListener) {
-                    @Override
-                    public void onSuccess(String result) {
-                        Log.e("EditAddressActivity", "addLocationData--result==" + result);
-                        //如果保存默认地址，缓存到本地
-                        SharedPreferences preferences = getSharedPreferences(Constant.cstId+"defaddr", Context.MODE_PRIVATE);
-                        SharedPreferences.Editor editor = preferences.edit();
-                        editor.putString("name", et_name.getText().toString());
-                        editor.putString("mobile", et_phone.getText().toString());
-                        editor.putString("addr", place);
-                        editor.commit();
-                        finish();
-                    }
-                    @Override
-                    public void onError(VolleyError error) {
-
-                    }
-                });
     }
+    private SubscriberOnNextListener getResultOnNext = new SubscriberOnNextListener<String>() {
+        @Override
+        public void onNext(String result) {
+            Log.e("EditAddressActivity", "addLocationData--result==" + result);
+            //如果保存默认地址，缓存到本地
+            String region = tv_region.getText().toString();
+            String addr = et_addr.getText().toString();
+            SharedPreferences preferences = getSharedPreferences(Constant.cstId+"defaddr", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("name", et_name.getText().toString());
+            editor.putString("mobile", et_phone.getText().toString());
+            editor.putString("addr", region+addr);
+            editor.commit();
+            finish();
+        }
+    };
     @Override
     public void onClick(View view) {
         switch (view.getId()){

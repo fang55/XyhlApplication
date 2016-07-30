@@ -2,10 +2,8 @@ package com.szxyyd.mpxyhl.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-
 import com.szxyyd.mpxyhl.activity.BaseApplication;
 import com.szxyyd.mpxyhl.modle.Reladdr;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -59,21 +57,6 @@ public class CommUtils {
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 		String result = df.format(curDate);
 		return result;
-	}
-	/**
-	 * 缓存默认地址
-	 */
-	public static void sharedDefAddr( List<Reladdr> list){
-		SharedPreferences preferences = BaseApplication.getInstance().getSharedPreferences("defaddr", Context.MODE_PRIVATE);
-		SharedPreferences.Editor editor = preferences.edit();
-		String name = list.get(0).getName().toString();
-		String phone = list.get(0).getMobile().toString();
-		String addr = list.get(0).getAddr().toString();
-		editor.putString("name", name);
-		editor.putString("mobile", phone);
-		editor.putString("addr", addr);
-		editor.putString("ifdef", list.get(0).getIfdef());
-		editor.commit();
 	}
 	public static String subStr(String result){
 

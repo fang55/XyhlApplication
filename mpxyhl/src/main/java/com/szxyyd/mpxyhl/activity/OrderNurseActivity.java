@@ -162,7 +162,7 @@ public class OrderNurseActivity extends Activity implements View.OnClickListener
         @Override
         public void onNext(String result) {
             Toast.makeText(OrderNurseActivity.this,"已提交"+result,Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(OrderNurseActivity.this,MyOrderFragment.class);
+            Intent intent = new Intent(OrderNurseActivity.this,HomePagerActivity.class);
             startActivity(intent);
             BaseApplication.getInstance().exit();
         }

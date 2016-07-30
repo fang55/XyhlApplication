@@ -270,7 +270,6 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/thirty"
                 android:text="培训经历"/>
-
             <LinearLayout
                 android:id="@+id/ll_train"
                 android:layout_width="match_parent"
@@ -302,23 +301,37 @@
         <LinearLayout
             style="@style/layout_content"
             >
+            <RelativeLayout
+                android:id="@+id/ll_evaMore"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/h90"
+                android:orientation="vertical"
+                >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/thirty"
                 android:text="客户评价"/>
+                <TextView
+                    android:id="@+id/tv_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/thirty"
+                    android:layout_alignParentRight="true"
+                    android:visibility="gone"
+                    android:text="更多评价" />
             <View
+                android:layout_alignParentBottom="true"
                 style="@style/view_line"
-                android:layout_marginTop="35dp"
                 />
-            <LinearLayout
-                android:id="@+id/ll_evaluate"
+            </RelativeLayout>
+            <ListView
+                android:id="@+id/lv_evaluate"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                >
+                android:layout_height="@dimen/h300">
+            </ListView>
         </LinearLayout>
-        </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
     <RelativeLayout

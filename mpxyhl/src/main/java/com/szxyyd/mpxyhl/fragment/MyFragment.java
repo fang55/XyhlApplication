@@ -39,8 +39,6 @@ public class MyFragment extends Fragment implements View.OnClickListener{
         return rootView;
     }
     private void initView(){
-        RelativeLayout rl_order = (RelativeLayout) rootView.findViewById(R.id.rl_order);
-        rl_order.setOnClickListener(this);
         RelativeLayout rl_location = (RelativeLayout) rootView.findViewById(R.id.rl_location);
         rl_location.setOnClickListener(this);
         RelativeLayout rl_collet = (RelativeLayout) rootView.findViewById(R.id.rl_collet);
@@ -61,10 +59,6 @@ public class MyFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.rl_order:
-                Intent intentOrder = new Intent(getActivity(),MyOrderFragment.class);
-                startActivity(intentOrder);
-                break;
             case R.id.rl_location: //服务地址
                 Intent intentLocation = new Intent(getActivity(),ServiceAddressActivity.class);
                 startActivity(intentLocation);

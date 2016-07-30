@@ -101,6 +101,7 @@ public class OrderDetailsActivity extends Activity implements View.OnClickListen
         }
     }
     private void submitData(int state){
+        Log.e("OrserDetsilsActivity","status==="+state);
         String orid = order.getId();
         String  url = Constant.odrCstUpdUrl + "&id="+orid+"&status="+state;
         VolleyRequestUtil.newInstance().RequestGet(this, url, "detail",

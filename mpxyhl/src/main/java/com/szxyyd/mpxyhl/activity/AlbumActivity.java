@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -66,8 +67,6 @@ public class AlbumActivity extends Activity{
     private class AlbumSendListener implements View.OnClickListener {
         public void onClick(View v) {
             overridePendingTransition(R.anim.activity_translate_in, R.anim.activity_translate_out);
-            intent.setClass(mContext, OrderCommentActivity.class);
-            startActivity(intent);
             finish();
         }
 
@@ -78,8 +77,6 @@ public class AlbumActivity extends Activity{
         public void onClick(View v) {
             Bimp.tempSelectBitmap.clear();
             overridePendingTransition(R.anim.activity_translate_in, R.anim.activity_translate_out);
-            intent.setClass(mContext, OrderCommentActivity.class);
-            startActivity(intent);
             finish();
         }
     }

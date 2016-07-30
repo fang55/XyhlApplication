@@ -2,18 +2,13 @@ package com.szxyyd.mpxyhl.activity;
 
 import android.app.Activity;
 import android.app.Application;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.facebook.stetho.Stetho;
 import com.lidroid.xutils.DbUtils;
-
 import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 import cn.jpush.android.api.JPushInterface;
 
 public class BaseApplication extends Application {
@@ -23,8 +18,6 @@ public class BaseApplication extends Application {
     public static RequestQueue queue;
 	//数据库
 	public static DbUtils dbUtils;
-	//线程池
-	public ExecutorService executorService = Executors.newFixedThreadPool(5);
 	public static BaseApplication getInstance() {
 		return instance;
 	}
@@ -33,6 +26,7 @@ public class BaseApplication extends Application {
 	public void onCreate() {
 		super.onCreate();
 		instance = this;
+		// 在使用 SDK 各组间之前初始化 context 信息，传入 ApplicationContext
 		Stetho.initializeWithDefaults(this);
 		queue = Volley.newRequestQueue(getApplicationContext());
 		dbUtils = DbUtils.create(getApplicationContext());

@@ -41,7 +41,6 @@ public class BitmapCacheActivity extends Activity {
 			// iv.setImageBitmap(null);
 			return;
 		}
-
 		if (imageCache.containsKey(path)) {
 			SoftReference<Bitmap> reference = imageCache.get(path);
 			Bitmap bmp = reference.get();
